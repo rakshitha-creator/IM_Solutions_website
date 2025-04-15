@@ -1,6 +1,8 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
+import './styles/portfolio.css';
 
 export default function Home() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -78,6 +80,7 @@ export default function Home() {
           padding: '0',
           background: '#000',
           color: '#fff',
+          scrollSnapAlign: 'start'
         }}
       >
         <div className="content" style={{ marginLeft: '2rem' }}>
@@ -122,6 +125,81 @@ export default function Home() {
             We are a team of digital innovators specializing in web, design, and performance.
             Our mission is to elevate your brand through creativity and strategy.
           </p>
+        </div>
+      </section>
+
+      {/* Portfolio Section */}
+      <section className="portfolio-section">
+        <div className="portfolio-content">
+          <h2 className="portfolio-title">Portfolio</h2>
+          
+          <div className="portfolio-grid">
+            {/* Fanplay Project */}
+            <div className="portfolio-card">
+              <div className="portfolio-image-container">
+                <Image
+                  src="/fanplay.jpg"
+                  alt="Fanplay"
+                  width={400}
+                  height={300}
+                  style={{
+                    width: '100%',
+                    height: '200px',
+                    objectFit: 'cover',
+                    borderRadius: '8px 8px 0 0'
+                  }}
+                />
+              </div>
+              <h3 className="portfolio-card-title">Fanplay</h3>
+              <p className="portfolio-card-description">
+                An IoT brand that helps fans cheer for their favourite sports teams and sports stars.
+              </p>
+            </div>
+
+            {/* Nippon Toyota Project */}
+            <div className="portfolio-card">
+              <div className="portfolio-image-container">
+                <Image
+                  src="/nippon.png"
+                  alt="Nippon Toyota"
+                  width={400}
+                  height={300}
+                  style={{
+                    width: '100%',
+                    height: '200px',
+                    objectFit: 'cover',
+                    borderRadius: '8px 8px 0 0'
+                  }}
+                />
+              </div>
+              <h3 className="portfolio-card-title">Nippon Toyota</h3>
+              <p className="portfolio-card-description">
+                The most successful Toyota dealership in India.
+              </p>
+            </div>
+
+            {/* Zen Mobility Project */}
+            <div className="portfolio-card">
+              <div className="portfolio-image-container">
+                <Image
+                  src="/zen.png"
+                  alt="Zen Mobility"
+                  width={400}
+                  height={300}
+                  style={{
+                    width: '100%',
+                    height: '200px',
+                    objectFit: 'cover',
+                    borderRadius: '8px 8px 0 0'
+                  }}
+                />
+              </div>
+              <h3 className="portfolio-card-title">Zen Mobility</h3>
+              <p className="portfolio-card-description">
+                Zero Emission New Mobility solution with zero impact on environment.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </div>
