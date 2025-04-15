@@ -1,0 +1,459 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #0d0b14;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main-container {
+  margin-left: 60px;
+  height: 100vh;
+  width: calc(100% - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 40px;
+  box-sizing: border-box;
+}
+
+.glitch-text {
+  font-size: 3.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  color: white;
+  text-shadow: 2px 2px 0 rgb(182, 16, 16), -2px -2px 0 cyan;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  transform: translateX(0);
+  width: auto;
+  position: relative;
+  left: 0;
+}
+
+.tags {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.scroll-btn {
+  margin-top: 2rem;
+  padding: 1rem;
+  border-radius: 50%;
+  border: none;
+  background: #c81731;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Sidebar styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 100vh;
+  background-color: #0c0b11;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.sidebar .top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 0.3rem;
+}
+
+.sidebar .middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10rem; /* Increased from 6rem to move content further down */
+  padding-top: 1rem; /* Added padding */
+}
+
+.sidebar .middle span {
+  color: #aaa;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  transition: all 0.3s ease;
+  padding: 0.2rem;
+}
+
+.sidebar .middle span:hover {
+  color: #c81731;
+  transform: rotate(180deg) translateX(3px) scale(1.05);
+  cursor: pointer;
+}
+
+.sidebar .bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: auto;
+  margin-bottom: 3rem; /* Increased from 2rem */
+  padding-bottom: 1rem; /* Added padding */
+}
+
+.sidebar .bottom span {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: #aaa;
+  transition: color 0.3s ease;
+}
+
+.sidebar .bottom span:hover {
+  color: #c81731;
+  cursor: pointer;
+}
+
+.sidebar .socials span {
+  font-size: 0.7rem;
+  color: #eee;
+  cursor: pointer;
+}
+
+.sidebar .middle {
+  margin-top: -30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.sidebar .middle span,
+.sidebar .bottom span {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: #aaa;
+}
+
+.sidebar .bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sidebar .socials span {
+  font-size: 0.7rem;
+  color: #eee;
+  cursor: pointer;
+}
+
+/* globals.css */
+/* globals.css */
+/* globals.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.glitch-text {
+  font-size: 4rem;
+  color: white;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  animation: glitch-anim 1s infinite linear;
+  transform: translateX(-5px);
+}
+
+@keyframes glitch-anim {
+  0% {
+    text-shadow: 
+      1px 0 red, 
+      -1px 0 rgb(38, 255, 0);
+  }
+  20% {
+    text-shadow: 
+      2px 0 red, 
+      -2px 0 rgb(0, 255, 21);
+  }
+  40% {
+    text-shadow: 
+      1px 0 red, 
+      -1px 0 rgb(0, 255, 8);
+  }
+  60% {
+    text-shadow: 
+      3px 0 red, 
+      -3px 0 rgb(0, 255, 30);
+  }
+  80% {
+    text-shadow: 
+      2px 0 red, 
+      -2px 0 rgb(30, 255, 0);
+  }
+  100% {
+    text-shadow: 
+      1px 0 red, 
+      -1px 0 rgb(0, 255, 42);
+  }
+}
+
+.tags {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.scroll-btn {
+  margin-top: 30px;
+  font-size: 2rem;
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.scroll-btn:hover {
+  transform: scale(1.1);
+}
+.glitch-text {
+  font-size: 4rem;
+  color: white;
+  text-transform: uppercase;
+  position: relative;
+  display: block;
+  text-align: left;
+  margin-left: 0;
+  padding-left: 40px;
+  animation: glitch-anim 1s infinite linear;
+}
+.content {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  left: 0;
+}
+#changing-word::after {
+  content: '|';
+  animation: blink 1s infinite;
+  margin-left: 4px;
+  color: white;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.glitch-text {
+  font-size: 4rem;
+  font-weight: bold;
+  color: white;
+  text-align: left;
+}
+
+.glitch-changing::after {
+  content: '';
+  animation: blink 1s step-start infinite;
+  margin-left: 4px;
+  color: white;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+/* Main container for social icons */
+/* Main container for social icons */
+.social-icon-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+/* Initially show the short names */
+.social-name {
+  font-size: 0.8rem;
+  color: white;
+  font-weight: 300;
+  transition: opacity 0.3s ease-in-out;
+  position: absolute;
+  opacity: 1;
+  white-space: nowrap;
+}
+
+/* Hide the icon initially and display it on hover */
+.social-icon {
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+/* Show the icon when the container is hovered */
+.social-icon-container:hover .social-icon {
+  opacity: 1;
+}
+
+/* Show the short name when not hovered */
+.social-icon-container:hover .social-name {
+  opacity: 0;
+}
+
+/* Style for the social icons */
+.social-icon-container a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.social-icon {
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover effect for icons */
+.social-icon-container a:hover {
+  transform: scale(1.2);
+  color: #00bfff;
+  
+}
+.header-socials {
+  display: flex;
+  gap: 0.7rem;
+  margin-left: 50px;
+  margin-top: 15px;
+}
+/* Style the About Us link in header */
+.header-link {
+  font-size: 1.2rem;
+  color: #e94e64;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 20px;
+  transition: color 0.3s ease;
+}
+
+.header-link:hover {
+  color: #ff3366;
+}
+
+
+.sidebar .middle span,
+.sidebar .middle a {
+  font-weight: 300;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.sidebar .middle a:hover {
+  color: #e94e64;
+}
+.sidebar .middle span:hover {
+  opacity: 0.7;
+}
+.horizontal-scroll {
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  height: 100vh;
+  width: 100vw;
+  scroll-behavior: smooth;
+}
+
+.section {
+  flex: 0 0 100vw;
+  height: 100%;
+  scroll-snap-align: start;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.home-section {
+  background: #111;
+  color: white;
+}
+
+.about-section {
+  background: #1a1a1a;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-content {
+  max-width: 600px;
+}
+
+.glitch-text {
+   position: relative;
+   line-height: 1.2;
+  }
+  
+  .typewriter-text {
+   display: inline-block;
+   border-right: 2px solid white;
+   white-space: nowrap;
+   overflow: hidden;
+   animation: blink-caret 0.75s step-end infinite;
+  }
+  
+  @keyframes blink-caret {
+   from, to {
+  border-color: transparent;
+  }
+   50% {
+   border-color: white;
+   }
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*phai*/
