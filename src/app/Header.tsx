@@ -8,7 +8,6 @@ import {
   FaBehance,
   FaInstagram,
 } from 'react-icons/fa';
-import ScrollButton from './ScrollButton';
 
 export default function Header() {
   const [hovered, setHovered] = useState<string | null>(null);
@@ -39,31 +38,45 @@ export default function Header() {
   const handleMouseEnter = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    const dir = getDirection(e);
     const overlay = overlayRef.current;
-    
     if (overlay) {
-      // Position the overlay at the mouse point
-      overlay.style.top = `${y}px`;
-      overlay.style.left = `${x}px`;
-      overlay.style.transform = 'translate(-50%, -50%) scale(1.5)';
+      overlay.style.transition = 'none';
+      switch (dir) {
+        case 'top':
+          overlay.style.top = '-100%';
+          overlay.style.left = '0';
+          break;
+        case 'bottom':
+          overlay.style.top = '100%';
+          overlay.style.left = '0';
+          break;
+        case 'left':
+          overlay.style.left = '-100%';
+          overlay.style.top = '0';
+          break;
+        case 'right':
+          overlay.style.left = '100%';
+          overlay.style.top = '0';
+          break;
+      }
+
+      requestAnimationFrame(() => {
+        overlay.style.transition = 'all 0.4s ease';
+        overlay.style.top = '0';
+        overlay.style.left = '0';
+      });
     }
   };
 
   const handleMouseLeave = () => {
     const overlay = overlayRef.current;
     if (overlay) {
-      overlay.style.transform = 'translate(-50%, -50%) scale(0)';
+      overlay.style.transition = 'all 0.4s ease';
+      overlay.style.top = '0';
+      overlay.style.left = '0';
+      overlay.style.transform = 'scale(0)';
     }
-  };
-
-  const handleScrollLeft = () => {
-    window.scrollTo({
-      left: 0,
-      behavior: 'smooth'
-    });
   };
 
   return (
@@ -150,24 +163,23 @@ export default function Header() {
             fontWeight: 'bold',
             cursor: 'pointer',
             overflow: 'hidden',
-            transition: 'all 0.3s ease',
-            zIndex: 1,
           }}
         >
           Estimate Project
+
+          {/* Animated Overlay */}
           <span
             ref={overlayRef}
             style={{
               position: 'absolute',
-              width: '300%',
-              height: '300%',
-              background: '#800020',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%) scale(0)',
-              borderRadius: '50%',
+              width: '100%',
+              height: '100%',
+              background: '#800020', // Burgundy
+              top: '0',
+              left: '0',
               zIndex: -1,
-              transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+              borderRadius: '20px',
+              transform: 'translate(0, 0)',
               pointerEvents: 'none',
             }}
           ></span>

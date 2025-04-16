@@ -12,9 +12,9 @@ export default function Sidebar() {
 
       {/* 🧭 Middle Section – Nav Items */}
       <div className="middle" style={{ marginTop: '-30px' }}>
-        <Link href="/about">
-          <span style={{ cursor: 'pointer' }}>ABOUT US</span>
-        </Link>
+        
+          <span>ABOUT US</span>
+        
         <span>SERVICES</span>
         <span>OUR CLIENTS</span>
         <span>CAREERS</span>
