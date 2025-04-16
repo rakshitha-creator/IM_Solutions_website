@@ -1,0 +1,121 @@
+.stories-section {
+  min-width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+
+.stories-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 25%;
+  background-image: url("/backgroundimg.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8;
+  z-index: 0;
+  filter: brightness(0.9) contrast(1.1);
+}
+
+.stories-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35%;
+  bottom: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0));
+  z-index: 1;
+}
+
+.stories-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 8rem;
+  position: relative;
+  z-index: 2;
+}
+
+.stories-left-column {
+  flex: 0 0 35%;
+}
+
+.stories-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.stories-description {
+  font-size: 0.95rem;
+  color: #888;
+  line-height: 1.6;
+  max-width: 300px;
+}
+
+.stories-right-column {
+  flex: 0 0 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.story-card {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.story-card:hover {
+  transform: translateX(20px);
+  opacity: 0.8;
+}
+
+.story-content {
+  flex: 1;
+}
+
+.story-latest-tag {
+  color: #ff4444;
+  font-size: 0.75rem;
+  margin-bottom: 0.3rem;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.story-title {
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+.story-arrow {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ff4444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.9rem;
+  margin-left: 1rem;
+  flex-shrink: 0;
+} 
