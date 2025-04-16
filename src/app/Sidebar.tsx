@@ -11,7 +11,7 @@ export default function Sidebar() {
       </div>
 
       {/* 🧭 Middle Section – Nav Items */}
-      <div className="middle" style={{ marginTop: '-30px' }}>
+      <div className="middle" style={{ marginTop: '40px' }}>
         
           <span>ABOUT US</span>
         

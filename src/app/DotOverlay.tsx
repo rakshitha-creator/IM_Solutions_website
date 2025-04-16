@@ -63,7 +63,7 @@ export default function DotOverlay() {
           onClick={handleOpen}
           style={{
             position: 'fixed',
-            top: 20,
+            top: 40,
             right: 20,
             width: 30,
             height: 30,
@@ -134,7 +134,7 @@ export default function DotOverlay() {
               <div style={{
                 position: 'fixed',
                 top: '2rem',
-                left: '2rem',
+              left: '2rem',
                 width: '100px',
                 height: '100px',
                 zIndex: 10001
@@ -261,12 +261,7 @@ export default function DotOverlay() {
                         {submenuItems.map((subItem, subIndex) => (
                           <div 
                             key={subIndex} 
-                            style={{ 
-                              display: 'flex', 
-                              alignItems: 'center',
-                              cursor: 'pointer',
-                              padding: '0.1rem 0.2rem'
-                            }}
+                           className='menu-item'
                             onMouseEnter={() => setHoveredSubmenuIndex(subIndex)}
                             onMouseLeave={() => setHoveredSubmenuIndex(null)}
                             onClick={() => handleSubmenuClick(subItem)}
