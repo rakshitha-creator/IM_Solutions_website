@@ -2,7 +2,7 @@
 import { useRouter } from 'next/navigation';
 import Sidebar from '../components/Sidebar';
 
-export default function AboutPage() {
+export default function ServicesPage() {
   const router = useRouter();
 
   return (
@@ -16,13 +16,13 @@ export default function AboutPage() {
         color: '#fff'
       }}>
         <div className="content">
-          <h1 style={{ fontSize: '3rem', marginBottom: '20px' }}>About Us</h1>
+          <h1 style={{ fontSize: '3rem', marginBottom: '20px' }}>Our Services</h1>
           <p style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
-            We are a creative team dedicated to delivering exceptional digital experiences.
+            Discover our range of professional services designed to elevate your digital presence.
           </p>
           <div style={{ display: 'flex', gap: '20px' }}>
             <button
-              onClick={() => router.push('/')}
+              onClick={() => router.push('/about')}
               style={{
                 padding: '10px 20px',
                 backgroundColor: '#e94e64',
@@ -32,10 +32,10 @@ export default function AboutPage() {
                 cursor: 'pointer'
               }}
             >
-              Back to Home
+              Back to About
             </button>
             <button
-              onClick={() => router.push('/services')}
+              onClick={() => router.push('/projects')}
               style={{
                 padding: '10px 20px',
                 backgroundColor: '#e94e64',
@@ -45,7 +45,7 @@ export default function AboutPage() {
                 cursor: 'pointer'
               }}
             >
-              Our Services
+              View Projects
             </button>
           </div>
         </div>

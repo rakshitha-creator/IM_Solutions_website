@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X } from 'lucide-react';
 
 export default function DotOverlay() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,15 +10,14 @@ export default function DotOverlay() {
 
   const handleOpen = () => {
     setIsOpen(true);
-    setShowDots(false); // hide the dots immediately
+    setShowDots(false);
   };
 
   const handleClose = () => {
     setIsOpen(false);
-    // Delay showing dots until after exit transition is done
     setTimeout(() => {
       setShowDots(true);
-    }, 800); // matches total exit duration
+    }, 800);
   };
 
   return (
@@ -47,8 +45,8 @@ export default function DotOverlay() {
               style={{
                 width: 6,
                 height: 6,
-                backgroundColor: 'white',
-                borderRadius: '50%',
+                backgroundColor: i === 2 ? 'rgb(109, 3, 23)' : 'white',
+                borderRadius: i === 2 ? '50%' : '0%',
               }}
             />
           ))}
@@ -64,7 +62,7 @@ export default function DotOverlay() {
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
-              transition={{ duration: 0.36 , ease: 'easeInOut' }}
+              transition={{ duration: 0.36, ease: 'easeInOut' }}
               style={{
                 position: 'fixed',
                 top: 0,
@@ -97,23 +95,46 @@ export default function DotOverlay() {
                 color: 'white',
               }}
             >
-              {/* Close Button */}
-              <button
+              {/* Custom Close Button */}
+              <div
                 onClick={handleClose}
                 style={{
                   position: 'absolute',
                   top: 60,
                   right: 20,
-                  background: 'none',
-                  border: 'none',
-                  fontSize: '2rem',
-                  color: '#fff',
+                  width: 24,
+                  height: 24,
                   cursor: 'pointer',
                   zIndex: 100,
                 }}
               >
-                <X />
-              </button>
+                {/* / line - white */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    width: 24,
+                    height: 2,
+                    backgroundColor: '#ffffff',
+                    transform: 'rotate(45deg)',
+                    top: '50%',
+                    left: '0',
+                    transformOrigin: 'center',
+                  }}
+                />
+                {/* \ line - rgb(230, 32, 74) */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    width: 24,
+                    height: 2,
+                    backgroundColor: 'rgb(230, 32, 74)',
+                    transform: 'rotate(-45deg)',
+                    top: '50%',
+                    left: '0',
+                    transformOrigin: 'center',
+                  }}
+                />
+              </div>
 
               {/* Content */}
               <motion.div

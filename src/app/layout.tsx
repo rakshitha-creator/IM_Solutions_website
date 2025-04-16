@@ -2,9 +2,8 @@
 
 import './globals.css';
 import Sidebar from './Sidebar'; // adjust path if needed
-import Header from './Header';   // adjust path if needed
+import Header from './components/Header';   // adjust path if needed
 import DotOverlay from './DotOverlay'; // 👈 New import for 9-dot overlay
-import ScrollButton from './ScrollButton';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -16,7 +15,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="main-container">
           {children}
         </main>
-        <ScrollButton />
       </body>
     </html>
   );

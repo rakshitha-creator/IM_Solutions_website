@@ -1,26 +1,19 @@
 'use client';
 import { useRouter } from 'next/navigation';
+import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
 
-export default function AboutPage() {
+export default function NextPage() {
   const router = useRouter();
 
   return (
     <>
       <Sidebar />
-      <main style={{ 
-        marginLeft: '100px', 
-        padding: '40px',
-        minHeight: '100vh',
-        backgroundColor: '#0d0b14',
-        color: '#fff'
-      }}>
+      <Header />
+      <main className="main-container">
         <div className="content">
-          <h1 style={{ fontSize: '3rem', marginBottom: '20px' }}>About Us</h1>
-          <p style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
-            We are a creative team dedicated to delivering exceptional digital experiences.
-          </p>
-          <div style={{ display: 'flex', gap: '20px' }}>
+          <h1>Next Page</h1>
+          <div style={{ marginTop: '30px', display: 'flex', gap: '20px' }}>
             <button
               onClick={() => router.push('/')}
               style={{
@@ -35,7 +28,7 @@ export default function AboutPage() {
               Back to Home
             </button>
             <button
-              onClick={() => router.push('/services')}
+              onClick={() => router.push('/about')}
               style={{
                 padding: '10px 20px',
                 backgroundColor: '#e94e64',
@@ -45,7 +38,7 @@ export default function AboutPage() {
                 cursor: 'pointer'
               }}
             >
-              Our Services
+              About
             </button>
           </div>
         </div>
