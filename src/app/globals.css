@@ -9,7 +9,7 @@ body {
 }
 
 .main-container {
-  margin-left: 80px;
+  margin-left: 20px;
   height: 100vh;
   width: calc(100% - 80px);
   display: flex;
@@ -896,41 +896,45 @@ body, html {
     min-width: 100%;
   }
 }
+.firstpage-right-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
 .grid-box {
   position: relative;
-  padding: 1.5rem;
   background-color: #1a1a1a;
   border-radius: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 1rem;
-  width: 100%;
-  max-width: 320px;
+  padding: 1.5rem;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
 
 .grid-content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
   position: relative;
-  flex: 1;
+  z-index: 2;
+  transition: opacity 0.3s ease;
 }
 
 .grid-label {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: bold;
+  margin-bottom: 0.8rem;
+  color: #fff;
+}
+
+.grid-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #ccc;
 }
 
 .grid-image {
-  width: 100%;
-  border-radius: 0.5rem;
-  object-fit: cover;
-  margin-top: 1rem;
-}
-
-.arrow-link {
   position: absolute;
+<<<<<<< Updated upstream
   bottom: 0;
   right: 0;
   margin: 1rem;
@@ -946,6 +950,235 @@ body, html {
   justify-content: center;
   cursor: pointer;
 }
+=======
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.grid-box:hover .grid-image {
+  opacity: 1;
+}
+
+.grid-box:hover .grid-content {
+  opacity: 0;
+}
+.service-card-box {
+  position: relative;
+  padding: 1.5rem;
+  border: 1px solid #444;
+  border-radius: 12px;
+  background-color: #222;
+  margin-bottom: 1rem;
+}
+
+.arrow-button {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: none;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 14px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+/* styles.css or global styles */
+.services-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0b0b12;
+  color: white;
+}
+
+.services-sidebar {
+  width: 20%;
+  background-image: url('/creative_sec.webp');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+/* Other styles like .menu, .service-card, etc., as per your requirements */
+
+.services-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0b0b12;
+  color: white;
+}
+
+.services-sidebar {
+  width: 20%;
+  background-image: url('/creative_sec.webp');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.back {
+  font-size: 0.8rem;
+  margin: 0.5rem 0 2rem;
+  cursor: pointer;
+  color: #aaa;
+}
+
+.sidebar-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  margin-bottom: 1rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  color: #888;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.menu li:hover {
+  color: white;
+  background-color: #e9445f;
+}
+
+.menu .active {
+  color: white;
+  background-color: #e9445f;
+}
+
+.quote {
+  font-size: 0.8rem;
+  color: #ccc;
+  margin-top: 2rem;
+  font-style: italic;
+}
+
+.services-content {
+  width: 80%;
+  padding: 4rem;
+  background: radial-gradient(ellipse at right, rgba(233, 68, 95, 0.15), transparent 70%);
+}
+
+.services-title span {
+  color: #e9445f;
+  font-weight: bold;
+}
+
+.services-title h1 {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+}
+
+.services-title p {
+  max-width: 450px;
+  line-height: 1.5;
+  color: #bbb;
+}
+
+.service-cards {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.service-title {
+  font-size: 1rem;
+  color: #e9445f;
+  margin-bottom: 0.5rem;
+}
+
+.service-card {
+  max-width: 600px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #060202;
+  height: 230px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.service-card p {
+  font-size: 16px;
+  color: #ccc;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.description-text {
+  transition: opacity 0.3s ease;
+}
+
+.image-hover-box {
+  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.hover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hover-arrow {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 30px;
+  height: auto;
+}
+
+/* Hover Behavior */
+.service-card:hover .description-text {
+  opacity: 0;
+}
+
+.service-card:hover .image-hover-box {
+  display: block;
+}
+/*new one */
+.hover-arrow {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  background-color: #ff2c2c;
+  border-radius: 50%;
+  padding: 4px;
+}
+
+>>>>>>> Stashed changes
 
 
 

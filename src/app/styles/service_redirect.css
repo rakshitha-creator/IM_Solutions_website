@@ -1,0 +1,32 @@
+.service-card-box {
+    position: relative;
+    padding: 1.5rem;
+    border: 1px solid #444;
+    border-radius: 1rem;
+    background-color: #222;
+    color: #fff;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+  }
+  
+  .arrow-button {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 1rem;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  .arrow-button:hover {
+    color: #ccc;
+  }
+  .redirect-container {
+    padding: 2rem;
+    color: #fff;
+  }
+  
+  

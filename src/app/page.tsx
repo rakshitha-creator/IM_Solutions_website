@@ -5,6 +5,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import '@/app/globals.css';
+<<<<<<< Updated upstream
+=======
+import Sidebar from './Sidebar';
+>>>>>>> Stashed changes
 
 export default function Home() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -15,7 +19,6 @@ export default function Home() {
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
-  // Typewriter effect
   useEffect(() => {
     const currentWord = words[index];
     let typingSpeed = isDeleting ? 50 : 100;
@@ -40,7 +43,6 @@ export default function Home() {
     return () => clearTimeout(timeout);
   }, [charIndex, isDeleting, index]);
 
-  // Horizontal scroll behavior
   useEffect(() => {
     const container = scrollRef.current;
     if (!container) return;
@@ -55,6 +57,10 @@ export default function Home() {
   }, []);
 
   return (
+    <>
+    
+    <Sidebar />
+   
     <div
       ref={scrollRef}
       style={{
@@ -67,7 +73,7 @@ export default function Home() {
         scrollSnapType: 'x mandatory',
       }}
     >
-      {/* Section 1 - Home */}
+      {/* Section 1 */}
       <section
         ref={(el) => (sectionRefs.current[0] = el)}
         style={{
@@ -85,6 +91,7 @@ export default function Home() {
         }}
       >
         <div className="content" style={{ marginLeft: '2rem', width: '100%' }}>
+<<<<<<< Updated upstream
           <h1
             className="glitch-text"
             style={{
@@ -93,11 +100,13 @@ export default function Home() {
               textAlign: 'left',
             }}
           >
+=======
+          <h1 className="glitch-text" style={{ fontSize: '4.8rem', fontWeight: 'bold', textAlign: 'left' }}>
+>>>>>>> Stashed changes
             WE SHALL <br />
             <span className="typewriter-text">{text}</span>
           </h1>
 
-          {/* Tags and Right-Aligned Arrow */}
           <div
             style={{
               marginTop: '1.5rem',
@@ -137,7 +146,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 2 - About */}
+      {/* Section 2 */}
       <section
         ref={(el) => (sectionRefs.current[1] = el)}
         style={{
@@ -185,7 +194,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 3 - FirstPage */}
+      {/* Section 3 */}
       <section
         ref={(el) => (sectionRefs.current[2] = el)}
         style={{
@@ -196,10 +205,13 @@ export default function Home() {
           scrollSnapAlign: 'start',
           display: 'flex',
           flexDirection: 'column',
+<<<<<<< Updated upstream
+=======
+          padding: '2rem 4rem',
+>>>>>>> Stashed changes
         }}
       >
         <main className="firstpage-wrapper">
-          {/* Left Section */}
           <div className="firstpage-left">
             <h1 className="main-heading">STORIES WE UNFOLD</h1>
             <p className="description">
@@ -211,6 +223,7 @@ export default function Home() {
             </div>
           </div>
 
+<<<<<<< Updated upstream
           {/* Right Section - Grid */}
           <div className="firstpage-right-grid">
           {['Creative', 'Performance', 'Website', 'Content'].map((label) => {
@@ -243,12 +256,116 @@ export default function Home() {
 })}
 
 
+=======
+          <div className="firstpage-right-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '2rem', marginTop: '3rem' }}>
+            {['Creative', 'Performance', 'Website', 'Content'].map((label) => (
+              <div
+                key={label}
+                className="grid-box"
+                style={{
+                  position: 'relative',
+                  border: '1px solid #444',
+                  borderRadius: '1rem',
+                  overflow: 'hidden',
+                  padding: '2rem',
+                  backgroundColor: '#333',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease',
+                }}
+                onMouseEnter={(e) => {
+                  const content = e.currentTarget.querySelector('.content-wrapper') as HTMLElement;
+                  const heading = e.currentTarget.querySelector('.heading-wrapper') as HTMLElement;
+                  const image = e.currentTarget.querySelector('.image-wrapper') as HTMLElement;
+                  const arrow = e.currentTarget.querySelector('.arrow-wrapper') as HTMLElement;
+                  if (content && heading && image && arrow) {
+                    content.style.opacity = '0';
+                    heading.style.opacity = '0';
+                    image.style.opacity = '1';
+                    arrow.style.opacity = '1';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  const content = e.currentTarget.querySelector('.content-wrapper') as HTMLElement;
+                  const heading = e.currentTarget.querySelector('.heading-wrapper') as HTMLElement;
+                  const image = e.currentTarget.querySelector('.image-wrapper') as HTMLElement;
+                  const arrow = e.currentTarget.querySelector('.arrow-wrapper') as HTMLElement;
+                  if (content && heading && image && arrow) {
+                    content.style.opacity = '1';
+                    heading.style.opacity = '1';
+                    image.style.opacity = '0';
+                    arrow.style.opacity = '0';
+                  }
+                }}
+              >
+                <h3
+                  className="heading-wrapper"
+                  style={{
+                    position: 'absolute',
+                    top: '0.5rem',
+                    left: '2rem',
+                    fontSize: '1.4rem',
+                    fontWeight: 'bold',
+                    marginBottom: '0.5rem',
+                    zIndex: 1,
+                    transition: 'opacity 0.3s ease',
+                  }}
+                >
+                  {label}
+                </h3>
+
+                <div className="content-wrapper" style={{ opacity: 1, paddingTop: '2rem', transition: 'opacity 0.5s ease-in-out' }}>
+                  <p style={{ fontSize: '16px', color: '#ccc', overflow: 'hidden', textOverflow: 'ellipsis', margin: 0 }}>
+                    {label === 'Creative'
+                      ? 'A picture is worth a thousand words. And the pictures our Creators can capture can portray the totality of your brand’s Image.'
+                      : label === 'Performance'
+                      ? 'Reach where no man or company has reached before with specialised strategies and optimised analytics to target and reach your treasured audience wherever they are.'
+                      : label === 'Website'
+                      ? 'Personalise your Digital Brand Home. Our website developers along with our designers and writers, work together in architecting the perfect digital home where your brand can be free to express itself.'
+                      : 'Words have the power of their own and when placed carefully together, they come out with meaning. Our writers craft words carefully together to give your brand the perfect identity and message it needs to deliver to your audience.'}
+                  </p>
+                </div>
+
+                <div className="image-wrapper" style={{ opacity: 0, transition: 'opacity 0.5s ease-in-out', background: '#000', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', position: 'absolute', top: 0, left: 0, width: '100%' }}>
+                  <img src="/imsolutions.png" alt={label} style={{ maxWidth: '80%', borderRadius: '0.5rem' }} />
+                </div>
+
+                {/* ✅ LINK for Arrow with Slug */}
+                <Link href={`/services_redirect#${label.toLowerCase()}`} passHref>
+                  <div
+                    className="arrow-wrapper"
+                    style={{
+                      position: 'absolute',
+                      bottom: '1rem',
+                      right: '1rem',
+                      width: '40px',
+                      height: '40px',
+                      backgroundColor: '#8B0000',
+                      borderRadius: '50%',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      cursor: 'pointer',
+                      zIndex: 1,
+                      opacity: 0,
+                      transition: 'opacity 0.3s ease',
+                    }}
+                  >
+                    <span style={{ color: '#fff', fontSize: '1.5rem' }}>→</span>
+                  </div>
+                </Link>
+              </div>
+            ))}
+>>>>>>> Stashed changes
           </div>
         </main>
       </section>
       
     </div>
+<<<<<<< Updated upstream
 
+=======
+    </>
+>>>>>>> Stashed changes
   );
 
 }
