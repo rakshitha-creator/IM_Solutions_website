@@ -16,8 +16,8 @@ export default function Sidebar() {
           <span>ABOUT US</span>
         
         <span>SERVICES</span>
-        <span>OUR CLIENTS</span>
-        <span>CAREERS</span>
+        
+        
         <span>BLOG</span>
         <span>CONTACT</span>
       </div>

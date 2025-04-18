@@ -4,7 +4,8 @@ import { useEffect } from 'react';
 import './globals.css';
 import Sidebar from './Sidebar'; // adjust path if needed
 import Header from './Header';   // adjust path if needed
-import DotOverlay from './DotOverlay'; // 👈 New import for 9-dot overlay
+import DotOverlay from './DotOverlay';
+ // 👈 New import for 9-dot overlay
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   // Global horizontal scroll effect

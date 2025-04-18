@@ -2,23 +2,22 @@
 
 import { useState,useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { log } from 'node:console';
 
 const serviceData = {
   Creative: [
     {
       title: '1.1 Animation',
-      description: 'Make your ideas come alive with our team of Animators who specialize in making your brand’s ideas move.',
+      description: 'Make your ideas come alive with our team of Animators who specialize in making your brand\'s ideas move.',
       image: 'imsolutions.png',
     },
     {
       title: '1.2 Design',
-      description: 'What you see is what you get — designs that sell, innovate, and speak your brand’s language.',
+      description: 'What you see is what you get — designs that sell, innovate, and speak your brand\'s language.',
       image: 'imsolutions.png',
     },
     {
       title: '1.3 Editing',
-      description: 'We help edit out what’s not needed and build your brand\'s presence over and over again.',
+      description: 'We help edit out what\'s not needed and build your brand\'s presence over and over again.',
       image: 'imsolutions.png',
     },
     {
@@ -27,7 +26,7 @@ const serviceData = {
       image: 'imsolutions.png',
     },
   ],
-  Website: [
+  Web: [
     { title: '2.1 Frontend', description: 'We craft beautiful and fast user interfaces that deliver an engaging user experience.', image: 'imsolutions.png' },
     { title: '2.2 Backend', description: 'Our backend developers ensure your applications are secure, fast, and scalable.', image: 'imsolutions.png' },
     { title: '2.3 Full Stack', description: 'Our full-stack engineers build seamless, end-to-end solutions tailored to your needs.', image: 'imsolutions.png' },
@@ -46,21 +45,16 @@ const serviceData = {
 
 export default function ServicesPage() {
   const [activeService, setActiveService] = useState('Creative');
-  console.log(window.location.hash,"hash");
-
 
   useEffect(() => {
+    // Get hash from URL, e.g. "#Performance"
     const hash = window.location.hash.replace('#', '');
-
-    const formatted = hash.charAt(0).toUpperCase() + hash.slice(1).toLowerCase(); // e.g. "performance" → "Performance"
+    const formatted = hash.charAt(0).toUpperCase() + hash.slice(1).toLowerCase(); // "performance" → "Performance"
 
     if (serviceData[formatted]) {
-        console.log(formatted,"formatted");
       setActiveService(formatted);
     }
   }, []);
-  
-  
 
   return (
     <div className="services-container">
