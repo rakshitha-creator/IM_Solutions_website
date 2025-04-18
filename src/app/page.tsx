@@ -6,6 +6,8 @@ import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import '@/app/globals.css';
 import Sidebar from './Sidebar';
+import { motion } from 'framer-motion';
+import { useInView } from 'framer-motion';
 
 export default function Home() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -15,6 +17,9 @@ export default function Home() {
   const [text, setText] = useState('');
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [activeSection, setActiveSection] = useState(0);
+  const [isScrolling, setIsScrolling] = useState(false);
+  const scrollTimeout = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const currentWord = words[index];
@@ -41,17 +46,38 @@ export default function Home() {
   }, [charIndex, isDeleting, index]);
 
   useEffect(() => {
-    const container = scrollRef.current;
-    if (!container) return;
-
     const handleWheel = (e: WheelEvent) => {
-      e.preventDefault();
-      container.scrollBy({ left: e.deltaY > 0 ? window.innerWidth : -window.innerWidth, behavior: 'smooth' });
+      if (isScrolling) return;
+      setIsScrolling(true);
+
+      if (e.deltaY > 0 && activeSection < 3) {
+        setActiveSection(prev => prev + 1);
+      } else if (e.deltaY < 0 && activeSection > 0) {
+        setActiveSection(prev => prev - 1);
+      }
+
+      if (scrollTimeout.current) {
+        clearTimeout(scrollTimeout.current);
+      }
+      scrollTimeout.current = setTimeout(() => {
+        setIsScrolling(false);
+      }, 1000);
     };
 
-    container.addEventListener('wheel', handleWheel, { passive: false });
-    return () => container.removeEventListener('wheel', handleWheel);
-  }, []);
+    window.addEventListener('wheel', handleWheel);
+    return () => {
+      window.removeEventListener('wheel', handleWheel);
+      if (scrollTimeout.current) {
+        clearTimeout(scrollTimeout.current);
+      }
+    };
+  }, [activeSection, isScrolling]);
+
+  useEffect(() => {
+    if (sectionRefs.current[activeSection]) {
+      sectionRefs.current[activeSection]?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [activeSection]);
 
   return (
     <>

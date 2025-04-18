@@ -293,6 +293,8 @@ body {
 .left-section {
   flex: 1;
   padding-right: 4rem;
+  margin-left: 4rem;
+  padding-left: 2rem;
 }
 
 .left-section h1 {
@@ -832,25 +834,6 @@ body, html {
 
 /* Other styles like .menu, .service-card, etc., as per your requirements */
 
-.services-container {
-  display: flex;
-  min-height: 100vh;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #0b0b12;
-  color: white;
-}
-
-.services-sidebar {
-  width: 20%;
-  background-image: url('/creative_sec.webp');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 2rem;
-}
-
 .back {
   font-size: 0.8rem;
   margin: 0.5rem 0 2rem;
@@ -972,10 +955,13 @@ body, html {
 
 .hover-arrow {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
-  width: 30px;
-  height: auto;
+  bottom: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  background-color: #ff2c2c;
+  border-radius: 50%;
+  padding: 4px;
 }
 
 /* Hover Behavior */
@@ -986,17 +972,7 @@ body, html {
 .service-card:hover .image-hover-box {
   display: block;
 }
-/*new one */
-.hover-arrow {
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
-  width: 28px;
-  height: 28px;
-  background-color: #ff2c2c;
-  border-radius: 50%;
-  padding: 4px;
-}
+
 .story-card-hover {
   transition: all 0.3s ease;
 }
@@ -1044,107 +1020,107 @@ body, html {
   width: 100%;
   height: 100%;
   overflow-x: scroll;
-  overflowY: hidden;
-  scrollSnapType: x mandatory;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
 }
 
 /* Section styles */
 .section {
-  minWidth: 100%;
+  min-width: 100%;
   height: 100vh;
   display: flex;
-  flexDirection: column;
-  justifyContent: center;
-  alignItems: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   padding: 0;
   background: #000;
   color: #fff;
-  scrollSnapAlign: start;
+  scroll-snap-align: start;
   position: relative;
 }
 
 .section-content {
-  marginLeft: 2rem;
+  margin-left: 2rem;
   width: 100%;
 }
 
 .section-heading {
-  fontSize: 4.8rem;
-  fontWeight: bold;
-  textAlign: left;
+  font-size: 4.8rem;
+  font-weight: bold;
+  text-align: left;
 }
 
 .section-tags {
-  marginTop: 1.5rem;
-  fontSize: 1.2rem;
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
   display: flex;
-  alignItems: center;
-  justifyContent: space-between;
+  align-items: center;
+  justify-content: space-between;
   width: 95%;
 }
 
 .scroll-button {
   width: 50px;
   height: 50px;
-  backgroundColor: #8B0000;
-  borderRadius: 50%;
+  background-color: #8B0000;
+  border-radius: 50%;
   display: flex;
-  justifyContent: center;
-  alignItems: center;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  marginRight: 15rem;
+  margin-right: 15rem;
 }
 
 /* Grid styles */
 .grid-container {
   display: grid;
-  gridTemplateColumns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
-  alignContent: center;
+  align-content: center;
 }
 
 .grid-box {
   background: #333;
   padding: 1.5rem;
-  borderRadius: 8px;
+  border-radius: 8px;
   display: flex;
-  flexDirection: column;
-  justifyContent: space-between;
+  flex-direction: column;
+  justify-content: space-between;
   position: relative;
   overflow: hidden;
 }
 
 .grid-label {
-  fontWeight: bold;
+  font-weight: bold;
   display: block;
-  marginBottom: 0.75rem;
-  fontSize: 1.1rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
 }
 
 .grid-content {
-  fontSize: 0.9rem;
+  font-size: 0.9rem;
   margin: 0;
-  lineHeight: 1.5;
+  line-height: 1.5;
 }
 
 .grid-image {
   width: 70%;
   height: 100px;
-  objectFit: cover;
-  borderRadius: 4px;
+  object-fit: cover;
+  border-radius: 4px;
 }
 
 .arrow-button {
   width: 40px;
   height: 40px;
-  backgroundColor: #8B0000;
-  borderRadius: 50%;
+  background-color: #8B0000;
+  border-radius: 50%;
   display: flex;
-  justifyContent: center;
-  alignItems: center;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   transition: transform 0.3s ease;
-  marginLeft: 10px;
+  margin-left: 10px;
 }
 
 .arrow-button:hover {
@@ -1154,30 +1130,30 @@ body, html {
 /* Story card styles */
 .story-card {
   display: flex;
-  justifyContent: space-between;
-  alignItems: center;
+  justify-content: space-between;
+  align-items: center;
   padding: 1rem 0;
   transition: all 0.3s ease;
   cursor: pointer;
   color: #fff;
-  borderBottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .story-tag {
-  backgroundColor: #8B0000;
+  background-color: #8B0000;
   padding: 0.25rem 0.75rem;
-  borderRadius: 1rem;
-  fontSize: 0.875rem;
-  marginBottom: 0.5rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
   display: inline-block;
   color: #fff;
-  fontWeight: 500;
+  font-weight: 500;
 }
 
 .story-title {
-  fontSize: 1.125rem;
-  marginTop: 0.5rem;
-  fontWeight: 500;
+  font-size: 1.125rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
   color: #fff;
   opacity: 0.95;
 }
@@ -1185,47 +1161,47 @@ body, html {
 /* Contact form styles */
 .contact-form {
   display: flex;
-  flexDirection: column;
+  flex-direction: column;
   gap: 1.5rem;
   width: 100%;
-  maxWidth: 400px;
+  max-width: 400px;
 }
 
 .form-input {
   background: transparent;
   border: none;
-  borderBottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   padding: 0.75rem 0;
   color: #fff;
-  fontSize: 1rem;
+  font-size: 1rem;
   width: 100%;
 }
 
 .submit-button {
-  alignSelf: flex-end;
+  align-self: flex-end;
   background: #e94e64;
   border: none;
   padding: 0.75rem 2rem;
-  borderRadius: 2rem;
+  border-radius: 2rem;
   color: #fff;
-  fontSize: 1rem;
+  font-size: 1rem;
   cursor: pointer;
   display: flex;
-  alignItems: center;
+  align-items: center;
   gap: 0.5rem;
-  marginTop: 1rem;
+  margin-top: 1rem;
 }
 
 .service-button {
   background: rgba(255,255,255,0.1);
   border: none;
   padding: 0.5rem 1rem;
-  borderRadius: 2rem;
+  border-radius: 2rem;
   color: #fff;
-  fontSize: 0.9rem;
+  font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  whiteSpace: nowrap;
+  white-space: nowrap;
 }
 
 .service-button:hover {
@@ -1235,8 +1211,8 @@ body, html {
 /* Back Button Styles */
 .back-button {
   position: fixed;
-  top: 2rem;
-  left: 6rem; /* Increased left margin to account for sidebar */
+  top: 4rem;
+  left: 6rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -1347,14 +1323,14 @@ body, html {
   height: calc(100vh - 4rem);
   overflow-y: auto;
   overflow-x: hidden;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   transform: translateX(0);
   transition: transform 0.3s ease;
 }
 
 .blog-content::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
 
 .blog-section {
@@ -1568,6 +1544,17 @@ body, html {
 
 .blog-content.scrolling-down {
   transform: translateX(100%);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 

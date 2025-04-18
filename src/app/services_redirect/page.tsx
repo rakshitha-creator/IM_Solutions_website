@@ -2,6 +2,7 @@
 
 import { useState,useEffect } from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 const serviceData = {
   Creative: [
@@ -61,8 +62,7 @@ export default function ServicesPage() {
       {/* Sidebar */}
       <div className="services-sidebar">
         <div>
-          <img src="/logo.png" alt="Logo" className="logo" style={{ width: '120px', marginBottom: '1rem' }} />
-          <div className="back">← Back to Home</div>
+          <Link href="/" className="back">← Back to Home</Link>
 
           <div className="sidebar-content">
             <h2>Services</h2>

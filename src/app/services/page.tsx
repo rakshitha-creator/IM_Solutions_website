@@ -3,29 +3,41 @@
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 
+interface ServiceItem {
+  title: string;
+  description: string;
+}
+
+interface ServiceData {
+  Creative: ServiceItem[];
+  Web: ServiceItem[];
+  Performance: ServiceItem[];
+  Content: ServiceItem[];
+}
+
 // Mock data for services
-const serviceData = {
+const serviceData: ServiceData = {
   Creative: [
-    { title: '1.1 Animation', description: 'Make your ideas come alive...', image: 'logo.png' },
-    { title: '1.2 Design', description: 'What you see is what you get...', image: 'logo.png' },
+    { title: '1.1 Animation', description: 'Make your ideas come alive...' },
+    { title: '1.2 Design', description: 'What you see is what you get...' },
   ],
   Web: [
-    { title: '2.1 Frontend', description: 'We craft beautiful interfaces...', image: 'logo.png' },
+    { title: '2.1 Frontend', description: 'We craft beautiful interfaces...' },
   ],
   Performance: [
-    { title: '3.1 SEO', description: 'Boost your website visibility...', image: 'logo.png' },
+    { title: '3.1 SEO', description: 'Boost your website visibility...' },
   ],
   Content: [
-    { title: '4.1 Writing', description: 'Our copywriters create compelling stories...', image: 'logo.png' },
+    { title: '4.1 Writing', description: 'Our copywriters create compelling stories...' },
   ],
 };
 
 export default function ServicesPage() {
-  const [activeService, setActiveService] = useState('Creative');
+  const [activeService, setActiveService] = useState<keyof ServiceData>('Creative');
   const router = useRouter();
 
   // Handle redirection
-  const handleRedirect = (serviceName: string) => {
+  const handleRedirect = (serviceName: keyof ServiceData) => {
     router.push(`/services_redirect/${serviceName}`);
   };
 
@@ -33,7 +45,6 @@ export default function ServicesPage() {
     <div className="services-container">
       <div className="services-sidebar">
         <div>
-          <img src="/logo.png" alt="Logo" className="logo" style={{ width: '120px', marginBottom: '2rem' }} />
           <div className="back">← Back to Home</div>
 
           <div className="sidebar-content">
@@ -44,8 +55,8 @@ export default function ServicesPage() {
                   key={key}
                   className={activeService === key ? 'active' : ''}
                   onClick={() => {
-                    setActiveService(key);
-                    handleRedirect(key);  // Redirect on click
+                    setActiveService(key as keyof ServiceData);
+                    handleRedirect(key as keyof ServiceData);
                   }}
                 >
                   {`${index + 1}. ${key}`}
@@ -70,16 +81,12 @@ export default function ServicesPage() {
         </div>
 
         <div className="service-cards">
-          {serviceData[activeService].map((item, i) => (
+          {serviceData[activeService].map((item: ServiceItem, i: number) => (
             <div key={i}>
               <h3 className="service-title">{item.title}</h3>
               <div className="service-card">
                 <div className="description-text">
                   <p>{item.description}</p>
-                </div>
-                <div className="image-hover-box">
-                  <img src={item.image} alt="Hover" className="hover-image" />
-                  <img src="/arrow-icon.png" alt="Arrow" className="hover-arrow" />
                 </div>
               </div>
             </div>

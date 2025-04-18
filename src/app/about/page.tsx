@@ -24,22 +24,22 @@ export default function AboutUs() {
         </button>
         
         <div className="about-content">
-          <h1 className="glitch-text">What we do</h1>
+          <h1 className="glitch-text" style={{ fontSize: '1.5rem' }}>What we do</h1>
           
           <div className="about-sections">
             <div className="about-section-item">
-              <h2>We Break</h2>
-              <p>away the noise and build your Brand from the core. We just love breaking stuff down to the quintessential core to bring forward the core messaging needed for your brand.</p>
+              <h2 style={{ fontSize: '1rem' }}>We Break</h2>
+              <p style={{ fontSize: '0.8rem' }}>away the noise and build your Brand from the core. We just love breaking stuff down to the quintessential core to bring forward the core messaging needed for your brand.</p>
             </div>
 
             <div className="about-section-item">
-              <h2>We Build</h2>
-              <p>simple, strong and innovative bridges. Building bridges is something else we love architecting. We find new, innovative & powerful ways to bridge our clients to their customers.</p>
+              <h2 style={{ fontSize: '1rem' }}>We Build</h2>
+              <p style={{ fontSize: '0.8rem' }}>simple, strong and innovative bridges. Building bridges is something else we love architecting. We find new, innovative & powerful ways to bridge our clients to their customers.</p>
             </div>
 
             <div className="about-section-item">
-              <h2>We Bridge</h2>
-              <p>an everlasting communication between our client and their customer. We don't stop there, we make sure the bridges are complete and tested thoroughly for timeless communication between our client and customer so that they may find an everlasting friendship along the way.</p>
+              <h2 style={{ fontSize: '1rem' }}>We Bridge</h2>
+              <p style={{ fontSize: '0.8rem' }}>an everlasting communication between our client and their customer. We don't stop there, we make sure the bridges are complete and tested thoroughly for timeless communication between our client and customer so that they may find an everlasting friendship along the way.</p>
             </div>
           </div>
 
@@ -50,10 +50,6 @@ export default function AboutUs() {
             <Link href="https://behance.net" className="social-link">Be</Link>
             <Link href="https://instagram.com" className="social-link">Ig</Link>
           </div>
-
-          <Link href="/contact" className="estimate-button">
-            Estimate Project
-          </Link>
         </div>
       </div>
     </>
