@@ -189,13 +189,15 @@ body, html {
   left: 1rem;
   z-index: 1000;
 }
-
-/* — Menu icon: always visible top‑right — */
+.site-logo img{
+  display: block;
+}
 .site-menu {
   position: fixed;
   top: 2rem;
   right: 2rem;
   z-index: 1000;
+  display:flex;
 }
 
 /* — Mobile tweaks: hide header & sidebar on ≤768px, adjust content — */

@@ -21,7 +21,7 @@
 
 .leftSection {
   flex: 1;
-  padding: 4rem;
+  padding: 2.7rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,7 +31,7 @@
 .leftSection h1 {
   font-size: 3rem;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.1;
   margin-bottom: 1.5rem;
 }
 
@@ -43,21 +43,21 @@
 
 .knowMoreBtn {
   margin-top: 2rem;
-  padding: 0.55rem 1.5rem;
+  padding: 0.3rem;
   background-color: transparent;
   color: white;
-  font-weight: bold;
+  font-weight: 1000;
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   font-size: 1rem;
-  border: none;
+  
   cursor: pointer;
 }
 
 .knowMoreBtn::after {
-  content: "→";
+  content: " →";
   background-color: #e53935;
   color: rgb(8, 0, 0);
   padding: 0.5rem;
@@ -117,3 +117,14 @@
     font-size: 0.95rem;
   }
 }
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+

@@ -1,15 +1,17 @@
 /* === Sidebar Layout === */
 .sidebar {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 80px;
     height: 100vh;
-    background-color: #0c0b11;
+    /* background-color: #0c0b11; */
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1.5rem 0;
+    z-index: 10;
+
   }
   
   /* === Top Logo Section === */

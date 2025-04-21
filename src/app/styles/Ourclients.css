@@ -21,13 +21,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 .ourClientsImage img {
   width: 100%;
-  height: auto;
-  max-height: 90%;
-  object-fit: contain;
+  height: 100vh;
+  max-height: 100%;
+  
+  
 }
 
 /* RIGHT SECTION */
@@ -60,35 +62,33 @@
 .ourClientsRightCards {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.5rem;
+  padding-right: 2rem;
 }
 
 .storyCard {
+  
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   display: flex;
+  gap: 1rem;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #444;
-  padding-bottom: 1.2rem;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.storyCard:last-child {
-  border-bottom: none;
-}
-
-.storyCard:hover .cardText {
-  color: #ff4c4c;
-}
-
-.storyCard:hover .arrowCircle {
-  background-color: #ff4c4c;
+.storyCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .tag {
   background-color: #631c29;
   color: white;
-  font-size: 0.7rem;
-  padding: 3px 10px;
+  font-size: 0.75rem;
+  padding: 4px 12px;
   border-radius: 999px;
   margin-right: 1rem;
   flex-shrink: 0;
@@ -96,26 +96,35 @@
 
 .cardText {
   flex: 1;
-  font-size: 0.95rem;
-  color: white;
-  margin-left: 1rem;
+  font-size: 1.2rem;
+  color: #d4c4c4;
+  
+  font-weight: 500;
   transition: color 0.3s ease;
 }
 
+.storyCard:hover .cardText {
+  color: #ff4c4c;
+}
+
 .arrowCircle {
-  background-color: #fff;
-  padding: 0.6rem;
+  background-color: #ff4c4c;
+  padding: 0.65rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 36px;
-  min-height: 36px;
-  cursor: pointer;
+  min-width: 38px;
+  min-height: 38px;
   transition: background-color 0.3s ease;
+}
+
+.arrowCircle:hover {
+  background-color: #e53e3e;
 }
 
 .arrowCircle img {
   width: 18px;
   height: 18px;
+  filter: brightness(0) invert(1); /* make icon white */
 }

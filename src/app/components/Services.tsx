@@ -15,7 +15,7 @@ export default function ServicesPage() {
 
   return (
     <div className="container">
-      <Sidebar />
+      {/* <Sidebar /> */}
       {/* <Header /> */}
 
       <div className="content">
@@ -107,6 +107,8 @@ export default function ServicesPage() {
               <img
                 src="/arrow.svg"
                 alt="Arrow"
+                width={24}
+                height={24}
                 className="hoverArrow"
                 onClick={(e) => {
                   e.stopPropagation();

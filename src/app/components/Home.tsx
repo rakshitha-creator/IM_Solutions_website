@@ -49,29 +49,10 @@ export default function Home() {
   return (
     <>
       {/* Logo top‑left */}
-      <div className="site-logo">
-        <Image
-          src="/imsolutions.png"
-          alt="Company Logo"
-          width={50}
-          height={50}
-          priority
-        />
-      </div>
-
-      {/* Menu icon top‑right */}
-      <div className="site-menu" onClick={() => setOverlayOpen(true)}>
-        <Image
-          src="/menu.svg"
-          alt="Menu"
-          width={30}
-          height={30}
-          priority
-        />
-      </div>
+    
 
       {/* <Header /> */}
-      <Sidebar />
+      {/* <Sidebar /> */}
 
       <main className="home-section">
         <div className="home-content">

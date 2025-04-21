@@ -6,13 +6,14 @@ import Home from './Home';
 import Aboutus from './Aboutus';
 import Services from './Services'; // ✅ Import Services
 import OurClients from './Ourclients';
+import Contact from './Contact';
 
 export default function FullPageSlider() {
   const [index, setIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const isScrolling = useRef(false);
 
-  const maxIndex = 3; // ✅ Update to reflect 3 slides (0, 1, 2)
+  const maxIndex = 4; // ✅ Update to reflect 3 slides (0, 1, 2)
 
   const handleWheel = useCallback((e: WheelEvent) => {
     e.preventDefault();
@@ -52,7 +53,8 @@ export default function FullPageSlider() {
         <div className={styles.slide}><Home /></div>
         <div className={styles.slide}><Aboutus /></div>
         <div className={styles.slide}><Services /></div>
-        <div className={styles.slide}><OurClients /></div> {/* ✅ Add Services */}
+        <div className={styles.slide}><OurClients /></div>
+        <div className={styles.slide}><Contact /></div> {/* ✅ Add Services */}
       </div>
     </div>
   );

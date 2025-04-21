@@ -38,6 +38,7 @@ export default function Header() {
     const overlay = overlayRef.current;
     if (overlay) {
       overlay.style.transition = 'none';
+      overlay.style.transform = 'scale(1)';
       switch (dir) {
         case 'top':
           overlay.style.top = '-100%';
@@ -58,9 +59,11 @@ export default function Header() {
       }
 
       requestAnimationFrame(() => {
-        overlay.style.transition = 'all 0.4s ease';
-        overlay.style.top = '0';
-        overlay.style.left = '0';
+        if (overlay) {
+          overlay.style.transition = 'all 0.4s ease';
+          overlay.style.top = '0';
+          overlay.style.left = '0';
+        }
       });
     }
   };
@@ -69,8 +72,6 @@ export default function Header() {
     const overlay = overlayRef.current;
     if (overlay) {
       overlay.style.transition = 'all 0.4s ease';
-      overlay.style.top = '0';
-      overlay.style.left = '0';
       overlay.style.transform = 'scale(0)';
     }
   };
@@ -87,8 +88,8 @@ export default function Header() {
           >
             <div
               style={{
-                transform:
-                  hovered === s.id ? 'translateY(-2rem)' : 'translateY(0)',
+                transform: hovered === s.id ? 'translateY(-2rem)' : 'translateY(0)',
+                transition: 'transform 0.3s ease',
               }}
               className="social-stack"
             >
