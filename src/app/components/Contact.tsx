@@ -22,7 +22,7 @@ export default function Contact() {
             <div className="contact-left">
               <h1 className="contact-title">
                 Interested?<br />
-                Let's talk!
+                Lets talk!
               </h1>
               <p className="contact-description">
                 Just fill this simple form in and we will contact you promptly

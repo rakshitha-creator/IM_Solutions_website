@@ -14,7 +14,7 @@ export default function Aboutus() {
           We are just a young (at heart) Digital Advertising Agency that loves to Break, Build & Bridge.<br /><br />
           We don’t simply sell a brand to its audience, we sell a connection.
         </p>
-        <Link href="/about" className={styles.knowMoreBtn}>
+        <Link href="/what-we-do" className={styles.knowMoreBtn}>
         Know more 
         </Link>
       </div>

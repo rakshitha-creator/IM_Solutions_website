@@ -9,32 +9,32 @@
     align-items: center;
     z-index: 10;
     flex-wrap: wrap;
-  }
-  
-  /* === Left Section: Social Icons === */
-  .header-left {
+}
+
+/* === Left Section: Social Icons === */
+.header-left {
     display: flex;
     gap: 1.2rem;
     margin-left: 70px;
-  }
-  
-  .social-item {
+}
+
+.social-item {
     position: relative;
     width: 2rem;
     height: 2rem;
     overflow: hidden;
     cursor: pointer;
-  }
-  
-  .social-stack {
+}
+
+.social-stack {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     transition: transform 0.4s ease;
-  }
-  
-  .social-label {
+}
+
+.social-label {
     font-size: 0.8rem;
     color: #aaa;
     height: 2rem;
@@ -42,9 +42,9 @@
     align-items: center;
     justify-content: center;
     transition: opacity 0.3s ease;
-  }
-  
-  .social-icon {
+}
+
+.social-icon {
     font-size: 1.2rem;
     color: #e94e64;
     height: 2rem;
@@ -53,25 +53,25 @@
     justify-content: center;
     transition: opacity 0.3s ease;
     opacity: 0;
-  }
-  
-  .social-item:hover .social-icon {
+}
+
+.social-item:hover .social-icon {
     opacity: 1;
-  }
-  
-  .social-item:hover .social-label {
+}
+
+.social-item:hover .social-label {
     opacity: 0;
-  }
-  
-  /* === Right Section: Estimate Button === */
-  .header-right {
+}
+
+/* === Right Section: Estimate Button === */
+.header-right {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    margin-right: 6.5rem;
-  }
-  
-  .estimate-button {
+    gap: 2rem;
+    margin-right: 4rem;
+}
+
+.estimate-button {
     position: relative;
     padding: 0.6rem 1.5rem;
     background: #e94e64;
@@ -82,9 +82,9 @@
     cursor: pointer;
     overflow: hidden;
     z-index: 1;
-  }
-  
-  .button-overlay {
+}
+
+.button-overlay {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -95,33 +95,46 @@
     border-radius: 20px;
     transform: scale(0);
     transition: all 0.4s ease;
-  }
-  
-  /* === Responsive Design === */
-  @media screen and (max-width: 768px) {
+}
+
+.menu-button {
+    background: transparent;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+}
+
+.menu-button img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+/* === Responsive Design === */
+@media screen and (max-width: 768px) {
     .header {
-      flex-direction: column;
-      align-items: flex-start;
-      top: 10px;
-      left: 20px;
-      right: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        top: 10px;
+        left: 20px;
+        right: 20px;
     }
-  
+
     .header-left {
-      margin-left: 0;
-      margin-top: 10px;
+        margin-left: 0;
+        margin-top: 10px;
     }
-  
+
     .header-right {
-      margin-top: 10px;
-      margin-right: 0;
+        margin-top: 10px;
+        margin-right: 0;
     }
-  }
-  @media screen and (max-width: 768px) {
-    .header {
-      display: none;
-    }
-  }
-  /* Fix the header at the top */
+}
+
+/* Fix the header at the top */
 
   

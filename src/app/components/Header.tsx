@@ -1,6 +1,8 @@
 'use client';
 import '../styles/Header.css';
 import { useState, useRef } from 'react';
+import { useDotOverlay } from '../layout';
+import Image from 'next/image';
 import {
   FaTwitter,
   FaFacebookF,
@@ -10,6 +12,7 @@ import {
 } from 'react-icons/fa';
 
 export default function Header() {
+  const { open } = useDotOverlay();
   const [hovered, setHovered] = useState<string | null>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const overlayRef = useRef<HTMLSpanElement>(null);
@@ -109,6 +112,15 @@ export default function Header() {
         >
           Estimate Project
           <span ref={overlayRef} className="button-overlay"></span>
+        </button>
+        <button className="menu-button" onClick={open}>
+          <Image
+            src="/menu.svg"
+            alt="Menu"
+            width={24}
+            height={24}
+            style={{ objectFit: 'contain' }}
+          />
         </button>
       </div>
     </header>
