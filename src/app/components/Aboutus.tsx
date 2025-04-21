@@ -1,8 +1,9 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import Sidebar from '../components/Sidebar'; // ✅ Correct path
-import styles from '../styles/Aboutus.module.css';
+import Sidebar from '@/app/components/Sidebar'; // ✅ Correct path
+import styles from '@/app/styles/Aboutus.module.css';
+
 export default function Aboutus() {
   return (
     <section className={styles.aboutSection}>
@@ -13,9 +14,9 @@ export default function Aboutus() {
         <h1>At Heart, We Are<br />Bridge Builders</h1>
         <p>
           We are just a young (at heart) Digital Advertising Agency that loves to Break, Build & Bridge.<br /><br />
-          We don’t simply sell a brand to its audience, we sell a connection.
+          We don't simply sell a brand to its audience, we sell a connection.
         </p>
-        <Link href="/about" className={styles.knowMoreBtn}>
+        <Link href="/what-we-do" className={styles.knowMoreBtn}>
           Know more 
         </Link>
       </div>

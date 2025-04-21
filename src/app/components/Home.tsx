@@ -7,6 +7,7 @@ import DotOverlay from './DotOverlay';
 import Image from 'next/image';
 import '../styles/Home.css';
 import Link from 'next/link';
+
 export default function Home() {
   const words = ['DARE', 'VENTURE', 'RISK'];
   const [index, setIndex] = useState(0);
@@ -38,14 +39,6 @@ export default function Home() {
     return () => clearTimeout(timeout);
   }, [charIndex, isDeleting, index]);
 
-  // ✅ Scroll to section with id="aboutus"
-  const handleArrowClick = () => {
-    const section = document.getElementById('aboutus');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <>
       {/* Logo top‑left */}
@@ -70,7 +63,6 @@ export default function Home() {
         />
       </div>
 
-      {/* <Header /> */}
       <Sidebar />
 
       <main className="home-section">
@@ -90,7 +82,6 @@ export default function Home() {
             <span>Content</span>
           </div>
 
-          {/* ⬇ Scroll to #aboutus section */}
           <Link href="/aboutus" className="circle-arrow">
             <Image
               src="/arrow.svg"
