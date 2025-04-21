@@ -1,0 +1,121 @@
+.ourClientsContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: linear-gradient(90deg, #000 60%, #1c0f16 100%);
+  color: white;
+  overflow: hidden;
+}
+
+.ourClientsContent {
+  display: flex;
+  flex: 1;
+  padding: 2rem 4rem;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* LEFT IMAGE */
+.ourClientsImage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ourClientsImage img {
+  width: 100%;
+  height: auto;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+/* RIGHT SECTION */
+.ourClientsRightSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.ourClientsHeading h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.ourClientsHeading h1 span {
+  display: block;
+}
+
+.ourClientsHeading p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #bcbcbc;
+}
+
+/* CARDS */
+.ourClientsRightCards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.storyCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #444;
+  padding-bottom: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.storyCard:last-child {
+  border-bottom: none;
+}
+
+.storyCard:hover .cardText {
+  color: #ff4c4c;
+}
+
+.storyCard:hover .arrowCircle {
+  background-color: #ff4c4c;
+}
+
+.tag {
+  background-color: #631c29;
+  color: white;
+  font-size: 0.7rem;
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.cardText {
+  flex: 1;
+  font-size: 0.95rem;
+  color: white;
+  margin-left: 1rem;
+  transition: color 0.3s ease;
+}
+
+.arrowCircle {
+  background-color: #fff;
+  padding: 0.6rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  min-height: 36px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.arrowCircle img {
+  width: 18px;
+  height: 18px;
+}

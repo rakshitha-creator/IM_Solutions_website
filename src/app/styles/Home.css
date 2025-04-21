@@ -1,0 +1,236 @@
+/* src/styles/Home.css */
+
+/* — Base reset & background — */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  height: 100%;
+  background-color: #000;
+  color: white;
+}
+
+/* — Main section — */
+.home-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-left: 80px;   /* space for desktop sidebar */
+  margin-left: 80px;
+  background: linear-gradient(to right, #000000, #1a0000);
+  overflow: hidden;
+  position: relative;
+}
+
+/* — Content container — */
+.home-content {
+  text-align: left;
+  max-width: 800px;
+  padding-left: 3rem;
+}
+
+/* — Glitch headline — */
+.glitch-text {
+  position: relative;
+  font-size: 4.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  animation: glitch-anim 1.5s infinite linear;
+}
+
+/* — Typing sub‑headline — */
+.glitch-type-text {
+  position: relative;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  color: white;
+  animation: glitch-anim 1.2s infinite linear;
+}
+
+/* — Ghost layers for glitch — */
+.glitch-text::before,
+.glitch-text::after,
+.glitch-type-text::before,
+.glitch-type-text::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+}
+.glitch-text::before,
+.glitch-type-text::before {
+  animation: glitch-before 1.5s infinite linear;
+  color: red;
+}
+.glitch-text::after,
+.glitch-type-text::after {
+  animation: glitch-after 1.5s infinite linear;
+  color: cyan;
+}
+
+/* — Blinking caret — */
+.typing-word {
+  display: inline-block;
+  border-right: 2px solid white;
+  animation: blink-caret 0.75s step-end infinite;
+  padding-left: 6px;
+}
+
+/* — Categories — */
+.categories {
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #bbb;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+.categories span {
+  transition: color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+.categories span:hover {
+  color: #e94e64;
+  transform: scale(1.05);
+}
+.categories .dot {
+  pointer-events: none;
+  color: #e94e64;
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+/* — Glitch keyframes — */
+@keyframes glitch-anim {
+  0% { text-shadow: 2px 2px red, -2px -2px cyan; }
+  25% { text-shadow: -2px 2px red, 2px -2px cyan; }
+  50% { text-shadow: 2px -2px red, -2px 2px cyan; }
+  75% { text-shadow: -2px -2px red, 2px 2px cyan; }
+  100% { text-shadow: 2px 2px red, -2px -2px cyan; }
+}
+@keyframes glitch-before {
+  0% { clip: rect(0,9999px,0,0); }
+  5% { clip: rect(5px,9999px,15px,0); }
+ 10% { clip: rect(10px,9999px,20px,0); }
+ 15% { clip: rect(15px,9999px,25px,0); }
+ 20% { clip: rect(0,9999px,0,0); }
+}
+@keyframes glitch-after {
+  0% { clip: rect(0,9999px,0,0); }
+  5% { clip: rect(12px,9999px,22px,0); }
+ 10% { clip: rect(8px,9999px,18px,0); }
+ 15% { clip: rect(4px,9999px,14px,0); }
+ 20% { clip: rect(0,9999px,0,0); }
+}
+@keyframes blink-caret {
+  0%,100% { border-color: transparent; }
+  50% { border-color: white; }
+}
+
+/* — Menu icon: always visible top‑right — */
+.mobile-menu {
+  display: block;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+}
+
+/* — Logo: mobile‑only top‑left — */
+.mobile-logo {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .mobile-logo {
+    display: block;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1000;
+  }
+
+  /* hide header & sidebar on mobile */
+  .header,
+  .sidebar {
+    display: none;
+  }
+
+  /* adjust main content spacing on mobile */
+  .home-section {
+    padding: 2rem;
+    margin: 0;
+    justify-content: flex-start;
+  }
+  .home-content {
+    padding: 0;
+    width: 100%;
+  }
+  .glitch-text { font-size: 3rem; }
+  .glitch-type-text { font-size: 2rem; }
+  .categories { font-size: 0.9rem; }
+}
+@media screen and (max-width: 480px) {
+  .home-section { padding: 1.5rem; }
+  .glitch-text { font-size: 2.4rem; }
+  .glitch-type-text { font-size: 1.6rem; }
+  .categories { font-size: 0.85rem; }
+  .categories .dot { font-size: 1rem; }
+}
+/* — Logo: always visible top‑left — */
+.site-logo {
+  position: fixed;
+  top: 2rem;
+  left: 1rem;
+  z-index: 1000;
+}
+
+/* — Menu icon: always visible top‑right — */
+.site-menu {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 1000;
+}
+
+/* — Mobile tweaks: hide header & sidebar on ≤768px, adjust content — */
+@media screen and (max-width: 768px) {
+  .header,
+  .sidebar {
+    display: none;
+  }
+
+  .home-section {
+    padding: 2rem;
+    margin: 0;
+    justify-content: flex-start;
+  }
+
+  .home-content {
+    padding: 0;
+    width: 100%;
+  }
+}
+
+.circle-arrow {
+  margin-top: 2.5rem;
+  width: 60px;
+  height: 60px;
+  background-color: #e94e64; /* red background */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.circle-arrow:hover {
+  background-color: #ff6f81; /* lighter red on hover */
+  transform: scale(1.1);
+}

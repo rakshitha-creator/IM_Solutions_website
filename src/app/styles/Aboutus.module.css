@@ -1,0 +1,119 @@
+
+
+.aboutSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #111;
+  color: #0e0e0e;
+  min-height: 100vh;
+  scroll-snap-align: start;
+  padding-left: 140px; /* ⬅️ Adds space for sidebar */
+}
+
+/* New wrapper for content next to Sidebar */
+.mainContent {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.leftSection {
+  flex: 1;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+}
+
+.leftSection h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.leftSection p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.knowMoreBtn {
+  margin-top: 2rem;
+  padding: 0.55rem 1.5rem;
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.knowMoreBtn::after {
+  content: "→";
+  background-color: #e53935;
+  color: rgb(8, 0, 0);
+  padding: 0.5rem;
+  border-radius: 50%;
+  font-size: 0.9rem;
+}
+
+.rightSection {
+  width: 35vw; /* Take up vertical slice */
+  max-width: 350px;
+  position: relative;
+  padding-right: 7rem; /* 👈 Add that right-side gap */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: radial-gradient(rgba(229, 57, 53, 0.2), transparent);
+}
+
+.aboutImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .aboutSection {
+    flex-direction: column;
+  }
+
+  .leftSection {
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .rightSection {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .aboutImage {
+    width: 100%;
+    height: auto;
+    border-radius: 0.75rem;
+  }
+
+  .leftSection h1 {
+    font-size: 2rem;
+  }
+
+  .leftSection p {
+    font-size: 1rem;
+  }
+
+  .knowMoreBtn {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,127 @@
+/* === Header Container === */
+.header {
+    position: absolute;
+    top: 20px;
+    left: 100px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    flex-wrap: wrap;
+  }
+  
+  /* === Left Section: Social Icons === */
+  .header-left {
+    display: flex;
+    gap: 1.2rem;
+    margin-left: 70px;
+  }
+  
+  .social-item {
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .social-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s ease;
+  }
+  
+  .social-label {
+    font-size: 0.8rem;
+    color: #aaa;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+  }
+  
+  .social-icon {
+    font-size: 1.2rem;
+    color: #e94e64;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+  }
+  
+  .social-item:hover .social-icon {
+    opacity: 1;
+  }
+  
+  .social-item:hover .social-label {
+    opacity: 0;
+  }
+  
+  /* === Right Section: Estimate Button === */
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-right: 6.5rem;
+  }
+  
+  .estimate-button {
+    position: relative;
+    padding: 0.5rem 1.2rem;
+    background: #e94e64;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .button-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #800020; /* Burgundy */
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 20px;
+    transform: translate(0, 0);
+    pointer-events: none;
+  }
+  
+  /* === Responsive Design === */
+  @media screen and (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      top: 10px;
+      left: 20px;
+      right: 20px;
+    }
+  
+    .header-left {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+  
+    .header-right {
+      margin-top: 10px;
+      margin-right: 0;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .header {
+      display: none;
+    }
+  }
+  /* Fix the header at the top */
+
+  
