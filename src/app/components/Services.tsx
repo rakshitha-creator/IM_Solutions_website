@@ -1,6 +1,5 @@
 'use client';
 
-import Header from './Header';
 import '../styles/Services.css';
 import Sidebar from './Sidebar';
 import { useRouter } from 'next/navigation';
@@ -10,13 +9,13 @@ export default function ServicesPage() {
   const router = useRouter();
 
   const handleRedirect = (path: string) => {
-    router.push(`/services/${path}`);
+    // Update the path to use the new dynamic route
+    router.push(`/services_redirect/${path.toLowerCase()}`); 
   };
 
   return (
     <div className="container">
       <Sidebar />
-      {/* <Header /> */}
 
       <div className="content">
         {/* Left Section with heading and text */}
@@ -34,12 +33,13 @@ export default function ServicesPage() {
 
         {/* Right Section - Clickable Cards */}
         <div className="gridSection">
-          {/* ✅ Creative card with routing */}
+          {/* Cards now call handleRedirect with 'creative', 'performance', etc. */}
+          {/* Ensure the keys match the data structure in the redirect page */}
           <div className="card hoverCard" onClick={() => handleRedirect('creative')}>
             <h2>Creative</h2>
             <p>
               A picture is worth a thousand words. And the pictures our designers can capture
-              can portray the totality of your brand’s image.
+              can portray the totality of your brand's image.
             </p>
             <div className="hoverImage">
               <img src="/creative.jpg" alt="Creative Hover" />
@@ -75,8 +75,9 @@ export default function ServicesPage() {
             </div>
           </div>
 
-          <div className="card hoverCard" onClick={() => handleRedirect('website')}>
-            <h2>Website</h2>
+          <div className="card hoverCard" onClick={() => handleRedirect('web')}>
+             {/* Changed 'website' to 'web' to match data keys */}
+            <h2>Web</h2>
             <p>
               Where can one visit to become personal with your brand? Yes, your brand home. Our
               Website developers along with our designers and writers work together in
@@ -90,7 +91,7 @@ export default function ServicesPage() {
                 className="hoverArrow"
                 onClick={(e) => {
                   e.stopPropagation();
-                  handleRedirect('website');
+                  handleRedirect('web'); // Changed 'website' to 'web'
                 }}
               />
             </div>

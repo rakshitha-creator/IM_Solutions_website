@@ -6,59 +6,38 @@
   font-size: 1rem;
   cursor: pointer;
   border-radius: 30px;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .showreelButton:hover {
   background-color: white;
   color: black;
+  transform: scale(1.05);
 }
 
-.modalOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.9);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+.arrow {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
 }
 
-.modalContent {
-  background: #000;
-  padding: 1rem;
-  border-radius: 10px;
-  position: relative;
-  width: 90%;
-  max-width: 800px;
+.showreelButton:hover .arrow {
+  transform: translateX(5px);
 }
 
-.closeButton {
-  position: absolute;
-  top: 10px;
-  right: 16px;
-  font-size: 2rem;
-  color: white;
-  background: none;
-  border: none;
-  cursor: pointer;
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .showreelButton {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
 }
 
-.videoWrapper {
-  position: relative;
-  padding-top: 56.25%;
-  height: 0;
-  overflow: hidden;
-  border-radius: 10px;
-}
-
-.videoWrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+@media screen and (max-width: 480px) {
+  .showreelButton {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
 }

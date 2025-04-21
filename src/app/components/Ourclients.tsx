@@ -6,30 +6,21 @@ import "../styles/Ourclients.css";
 
 const Ourclients = () => {
   return (
-    <div className="ourClientsContainer">
-      <div className="ourClientsContent">
-        {/* LEFT IMAGE */}
-        <div className="ourClientsImage">
-          <img src="/creative_sec.webp" alt="Creative Section" />
-        </div>
-
-        {/* RIGHT CONTENT */}
-        <div className="ourClientsRightSection">
-          <div className="ourClientsHeading">
-            <h1>
-              <span>Our</span>
-              <br />
-              <span>Stories</span>
-            </h1>
-            <p>
+    <div className="container">
+      <div className="content">
+        {/* LEFT IMAGE + CONTENT */}
+        <div className="leftSection">
+          <div className="leftContent">
+            <h1 className="heading">Our Stories</h1>
+            <p className="description">
               Everyone has a story to tell. Here is ours.
-              <br />
-              Learn more about Digital Advertising.
-              <br />
-              Learn more about Audento Digital.
+              Learn more about Digital Advertising. Learn more about Audento Digital.
             </p>
           </div>
+        </div>
 
+        {/* RIGHT STORY CARDS ONLY */}
+        <div className="ourClientsRightSection">
           <div className="ourClientsRightCards">
             <div className="storyCard">
               <div className="tag">Latest</div>

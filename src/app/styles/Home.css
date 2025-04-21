@@ -20,6 +20,11 @@ body, html {
   background: linear-gradient(to right, #000000, #1a0000);
   overflow: hidden;
   position: relative;
+  transition: transform 0.5s ease-in-out;
+}
+
+.home-section.slide-out {
+  transform: translateX(-100%);
 }
 
 /* — Content container — */

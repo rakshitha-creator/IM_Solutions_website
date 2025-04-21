@@ -1,19 +1,22 @@
 'use client';
-
 import { useState, useEffect } from 'react';
 import Header from './Header';
 import Sidebar from './Sidebar';
-import DotOverlay from './DotOverlay';
+import MenuIcon from './MenuIcon';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import { useDotOverlay } from '../layout';
 import '../styles/Home.css';
-import Link from 'next/link';
+
 export default function Home() {
+  const router = useRouter();
+  const { open } = useDotOverlay();
   const words = ['DARE', 'VENTURE', 'RISK'];
   const [index, setIndex] = useState(0);
   const [text, setText] = useState('');
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [overlayOpen, setOverlayOpen] = useState(false);
+  const [isSliding, setIsSliding] = useState(false);
 
   useEffect(() => {
     const currentWord = words[index];
@@ -38,42 +41,25 @@ export default function Home() {
     return () => clearTimeout(timeout);
   }, [charIndex, isDeleting, index]);
 
-  // ✅ Scroll to section with id="aboutus"
-  const handleArrowClick = () => {
-    const section = document.getElementById('aboutus');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
+  const handleNavigation = (path: string) => {
+    setIsSliding(true);
+    setTimeout(() => {
+      router.push(path);
+    }, 500);
   };
 
   return (
     <>
       {/* Logo top‑left */}
-      <div className="site-logo">
-        <Image
-          src="/imsolutions.png"
-          alt="Company Logo"
-          width={50}
-          height={50}
-          priority
-        />
-      </div>
+     
 
       {/* Menu icon top‑right */}
-      <div className="site-menu" onClick={() => setOverlayOpen(true)}>
-        <Image
-          src="/menu.svg"
-          alt="Menu"
-          width={30}
-          height={30}
-          priority
-        />
-      </div>
+      <MenuIcon />
 
       {/* <Header /> */}
       <Sidebar />
 
-      <main className="home-section">
+      <main className={`home-section ${isSliding ? 'slide-out' : ''}`}>
         <div className="home-content">
           <h1 className="glitch-text">WE SHALL</h1>
           <h2 className="glitch-type-text" data-text={text}>
@@ -81,28 +67,25 @@ export default function Home() {
           </h2>
 
           <div className="categories">
-            <span>Creative</span>
+            <span onClick={() => handleNavigation('/services_redirect/creative')}>Creative</span>
             <span className="dot">•</span>
-            <span>Web</span>
+            <span onClick={() => handleNavigation('/services_redirect/web')}>Web</span>
             <span className="dot">•</span>
-            <span>Performance</span>
+            <span onClick={() => handleNavigation('/services_redirect/performance')}>Performance</span>
             <span className="dot">•</span>
-            <span>Content</span>
+            <span onClick={() => handleNavigation('/services_redirect/content')}>Content</span>
           </div>
 
-          {/* ⬇ Scroll to #aboutus section */}
-          <Link href="/aboutus" className="circle-arrow">
+          <div className="circle-arrow" onClick={() => handleNavigation('/aboutus')}>
             <Image
               src="/arrow.svg"
               alt="Arrow"
               width={24}
               height={24}
             />
-          </Link>
+          </div>
         </div>
       </main>
-
-      <DotOverlay isOpen={overlayOpen} onClose={() => setOverlayOpen(false)} />
     </>
   );
 }

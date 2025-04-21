@@ -40,7 +40,6 @@
   z-index: 2;
 }
 
-
 .heading {
   font-size: 48px;
   font-weight: bold;
@@ -112,6 +111,7 @@
   color: #ccc;
   line-height: 1.5;
 }
+
 .hoverCard {
   position: relative;
   overflow: hidden;
@@ -138,6 +138,7 @@
   left: 0;
   opacity: 1;
 }
+
 .hoverArrow {
   position: absolute;
   bottom: 12px;
@@ -157,4 +158,41 @@
 
 .hoverArrow:hover {
   transform: scale(1.15);
+}
+
+/* --- Remove Old Grid/Card Styles --- */
+/* .gridSection { ... } */
+/* .card { ... } */
+/* .hoverCard { ... } */
+/* .hoverImage { ... } */
+/* .hoverArrow { ... } */
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+  .content {
+    flex-direction: column;
+  }
+  .services-list-section {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: none;
+    min-height: 45vh; 
+    border-right: none;
+    border-bottom: 1px solid #222;
+  }
+  .services-placeholder {
+    min-height: 55vh;
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-list-section {
+     padding: 4rem 1.5rem 1.5rem 1.5rem;
+     min-height: 40vh;
+  }
+  .services-main-title { font-size: 2.2rem; margin-bottom: 1.5rem; }
+  .service-item { font-size: 1.3rem; padding: 0.8rem 1rem; margin-bottom: 0.5rem; }
+  .services-placeholder h2 { font-size: 1.5rem; }
+  .services-placeholder p { font-size: 1rem; }
 }
