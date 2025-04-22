@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Link from 'next/link';
-import '@/app/styles/stories.css';
 
 const Story2 = () => {
   return (

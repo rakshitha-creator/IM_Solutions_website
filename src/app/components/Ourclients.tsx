@@ -25,7 +25,7 @@ const Ourclients = () => {
             <div className="storyCard">
               <div className="tag">Latest</div>
               <div className="cardText">Images vs Video vs GIFs – Which Should I choose?</div>
-              <Link href="/ourclients/story1">
+              <Link href="/blog/media-comparison">
                 <div className="arrowCircle">
                   <img src="/arrow.svg" alt="arrow" />
                 </div>
@@ -35,7 +35,7 @@ const Ourclients = () => {
             <div className="storyCard">
               <div className="tag">Latest</div>
               <div className="cardText">Upgrade your brand with these 5 social media tools</div>
-              <Link href="/ourclients/story2">
+              <Link href="/blog/social-media-tools">
                 <div className="arrowCircle">
                   <img src="/arrow.svg" alt="arrow" />
                 </div>
@@ -45,7 +45,7 @@ const Ourclients = () => {
             <div className="storyCard">
               <div className="tag">Latest</div>
               <div className="cardText">What the future looks like for content marketing?</div>
-              <Link href="/ourclients/story3">
+              <Link href="/blog/content-marketing-future">
                 <div className="arrowCircle">
                   <img src="/arrow.svg" alt="arrow" />
                 </div>
