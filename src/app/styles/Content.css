@@ -1,0 +1,31 @@
+.serviceDetailPage {
+    display: flex;
+    min-height: 100vh;
+    background: #0d0d0d;
+    color: #fff;
+  }
+  .contentImage {
+    flex: 1;
+    background: url('/content.jpg') center/cover no-repeat;
+  }
+  .serviceContent {
+    flex: 1;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .backButton {
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+  }
+  .backButton:hover {
+    background: #fff;
+    color: #000;
+  }
+  

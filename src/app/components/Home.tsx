@@ -72,7 +72,7 @@ export default function Home() {
           </div>
 
           {/* ⬇ Scroll to #aboutus section */}
-          <Link href="/aboutus" className="circle-arrow">
+          <Link href="/#about" className="circle-arrow">
             <Image
               src="/arrow.svg"
               alt="Arrow"

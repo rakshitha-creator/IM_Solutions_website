@@ -1,0 +1,193 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0a0a0f;
+  color: white;
+}
+
+/* Container Layout */
+.creative-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  padding: 40px 20px;
+  margin-top:6rem;
+  background-color: #0b0b11;
+  border-right: 1px solid #1f1f25;
+}
+.sidebar h2 {
+  color: white;
+  margin-bottom: 10px;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar li {
+  color: #999;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.sidebar li.active,
+.sidebar li:hover {
+  color: #fff;
+  background-color: #d63c48;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+/* Main Content */
+.creative-content {
+  flex: 1;
+  padding: 60px;
+  background: radial-gradient(circle at right, #14121a, #0a0a0f);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Intro Section */
+.intro h3 {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 10px;
+}
+.title-highlight {
+  color: #fff;
+  font-weight: bold;
+}
+.intro p {
+  max-width: 500px;
+  color: #ccc;
+}
+
+/* Creative Grid with Scroll */
+.creative-grid {
+  flex: 1;                   /* Takes remaining vertical space */
+  overflow-y: auto;          /* Enables vertical scrolling */
+  padding-right: 8px;        /* Prevent content hiding under scrollbar */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Card */
+.creative-card {
+  background: #16141d;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align text at top */
+  padding: 20px;
+  height: 220px; /* Fixed height to fit 4 lines of text */
+  max-height: 220px; /* Ensure no overflow of text */
+  box-sizing: border-box;
+  width: 100%;
+}
+.creative-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Text Content */
+.text-content {
+  z-index: 2;
+  position: relative;
+  transition: opacity 0.3s ease;
+}
+.text-content h4 {
+  color: #aa0d0d;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+.text-content p {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;        /* Limit to 4 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* Hide text on hover */
+.creative-card:hover .text-content {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Image Overlay */
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.creative-card:hover .image-overlay {
+  visibility: visible;
+  opacity: 1;
+}
+.image-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Arrow Button */
+.hover-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: #d63c48;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  padding: 10px 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 3;
+}
+.hover-btn:hover {
+  background-color: #e04c58;
+}
+
+/* Footer Text */
+.footer-text {
+  flex-shrink: 0;  /* Stay visible below the scrollable grid */
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #888;
+  text-align: left;
+  max-width: 400px;
+}
+
+/* Optional: Custom Scrollbar */
+.creative-grid::-webkit-scrollbar {
+  width: 6px;
+}
+.creative-grid::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+.creative-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
