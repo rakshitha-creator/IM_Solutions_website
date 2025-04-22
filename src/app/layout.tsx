@@ -1,22 +1,45 @@
 'use client';
 
 import './globals.css';
-import Sidebar from './Sidebar'; // adjust path if needed
-import Header from './Header';   // adjust path if needed
-import DotOverlay from './DotOverlay'; // 👈 New import for 9-dot overlay
-import ScrollButton from './ScrollButton';
+import { ReactNode, createContext, useContext, useState } from 'react';
+import DotOverlay from './components/DotOverlay';
+import PageLayout from './components/PageLayout';
+import Image from 'next/image';
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+const DotOverlayContext = createContext({
+  isOpen: false,
+  open: () => {},
+  close: () => {},
+});
+
+export function useDotOverlay() {
+  return useContext(DotOverlayContext);
+}
+
+export default function RootLayout({ children }: { children: ReactNode }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const open = () => setIsOpen(true);
+  const close = () => setIsOpen(false);
+
   return (
     <html lang="en">
-      <body style={{ margin: 0, padding: 0, background: '#0d0b14', color: 'white' }}>
-        <Sidebar />
-        <Header />
-        <DotOverlay /> {/* 👈 Add this right after Header */}
-        <main className="main-container">
-          {children}
-        </main>
-        <ScrollButton />
+      <body>
+        <DotOverlayContext.Provider value={{ isOpen, open, close }}>
+          <div className="site-logo">
+            <Image
+              src="/imsolutions.png"
+              alt="Company Logo"
+              width={50}
+              height={50}
+              priority
+            />
+          </div>
+          <DotOverlay isOpen={isOpen} onClose={close} />
+          <PageLayout>
+            {children}
+          </PageLayout>
+        </DotOverlayContext.Provider>
       </body>
     </html>
   );

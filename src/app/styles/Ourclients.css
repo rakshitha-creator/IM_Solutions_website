@@ -1,0 +1,130 @@
+.ourClientsContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: linear-gradient(90deg, #000 60%, #1c0f16 100%);
+  color: white;
+  overflow: hidden;
+}
+
+.ourClientsContent {
+  display: flex;
+  flex: 1;
+  padding: 2rem 4rem;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* LEFT IMAGE */
+.ourClientsImage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.ourClientsImage img {
+  width: 100%;
+  height: 100vh;
+  max-height: 100%;
+  
+  
+}
+
+/* RIGHT SECTION */
+.ourClientsRightSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.ourClientsHeading h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.ourClientsHeading h1 span {
+  display: block;
+}
+
+.ourClientsHeading p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #bcbcbc;
+}
+
+/* CARDS */
+.ourClientsRightCards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-right: 2rem;
+}
+
+.storyCard {
+  
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.storyCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.tag {
+  background-color: #631c29;
+  color: white;
+  font-size: 0.75rem;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.cardText {
+  flex: 1;
+  font-size: 1.2rem;
+  color: #d4c4c4;
+  
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.storyCard:hover .cardText {
+  color: #ff4c4c;
+}
+
+.arrowCircle {
+  background-color: #ff4c4c;
+  padding: 0.65rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  min-height: 38px;
+  transition: background-color 0.3s ease;
+}
+
+.arrowCircle:hover {
+  background-color: #e53e3e;
+}
+
+.arrowCircle img {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1); /* make icon white */
+}

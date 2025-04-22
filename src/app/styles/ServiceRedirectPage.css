@@ -1,0 +1,338 @@
+/* Overall Container */
+.service-redirect-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #0c0c0c; /* Dark background */
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Sidebar Section */
+.service-redirect-sidebar {
+  flex: 0 0 30%; /* Adjust width as needed */
+  max-width: 200px;
+  min-width: 150px;
+  background-color: #111; /* Slightly different background */
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes quote to bottom */
+  border-right: 1px solid #2a2a2a;
+  overflow: hidden;
+}
+
+.back-button {
+  background: none;
+  border: 1px solid #555;
+  color: #aaa;
+  padding: 0.6rem 1rem;
+  margin-bottom: 3rem;
+  margin-top: 4rem;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  text-align: left;
+  display: block;
+  width: fit-content;
+}
+
+.back-button:hover {
+  border-color: #ff0a1f;
+  color: #ff0a1f;
+  background-color: rgba(255, 10, 31, 0.05);
+}
+
+.sidebar-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #eee;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  padding: 0.9rem 0.5rem;
+  font-size: 1.1rem;
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-left: 4px solid transparent;
+  margin-bottom: 0.5rem;
+}
+
+.menu li:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-left-color: #555;
+}
+
+.menu li.active {
+  color: #ff0a1f;
+  font-weight: 600;
+  background-color: rgba(255, 10, 31, 0.08);
+  border-left-color: #ff0a1f;
+}
+
+.quote {
+  font-size: 0.85rem;
+  color: #777;
+  line-height: 1.6;
+  margin-top: 2rem;
+  font-style: italic;
+}
+
+/* Content Section */
+.service-redirect-content {
+  flex-grow: 1;
+  /* Restore previous padding */
+  padding: 4rem 3rem; 
+  overflow: hidden; 
+  display: flex; 
+  flex-direction: column;
+}
+
+.service-title-header {
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.service-title-header span {
+  font-size: 1.1rem;
+  color: #777;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.service-title-header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
+  margin: 0 0 0.8rem 0;
+}
+
+.service-title-header p {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+/* Service Cards Horizontal Scroll Container */
+.service-cards-scroll {
+  display: flex; 
+  gap: 1.5rem;
+  padding: 0 0 1rem 0; 
+  margin: 0 -1.5rem; 
+  padding-left: 1.5rem; 
+  padding-right: 1.5rem; 
+  flex-grow: 1;
+  align-items: stretch; 
+  min-height: auto; 
+  padding-bottom: 2rem; 
+  overflow: hidden;
+}
+
+/* Webkit scrollbar styles (Chrome, Safari, Edge) */
+.service-cards-scroll::-webkit-scrollbar {
+  height: 14px; /* Increased height */
+}
+.service-cards-scroll::-webkit-scrollbar-track {
+  background: #282828; /* Slightly lighter track */
+  border-radius: 7px;
+}
+.service-cards-scroll::-webkit-scrollbar-thumb {
+  background-color: #ff0a1f; /* Bright thumb color */
+  border-radius: 7px;
+  border: 3px solid #282828; /* Creates padding around thumb */
+}
+
+.service-cards-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: #e0000f; /* Darker red on hover */
+}
+
+/* Individual Service Card Item Box */
+.service-card-item {
+  flex: 0 0 auto; 
+  width: 270px; 
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px; 
+  display: flex; 
+  flex-direction: column; 
+  position: relative; 
+  overflow: hidden; /* Changed back to hidden */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-height: 240px;
+}
+
+.card-content-wrapper {
+  padding: 1.2rem; 
+  gap: 0.6rem; 
+  position: relative; /* Ensure this is relative for number positioning */
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Allow wrapper to grow */
+  transition: opacity 0.4s ease-in-out;
+  overflow: hidden;
+}
+
+/* Style for the number SPAN */
+.item-number-display {
+    position: absolute;
+    top: 1.2rem; /* Match wrapper padding */
+    left: 1.2rem; /* Match wrapper padding */
+    font-size: 0.9rem;
+    color: #ff0a1f; 
+    font-weight: bold;
+    /* No z-index needed if it's a sibling before the title */
+}
+
+.service-card-title {
+  font-size: 1.5rem; 
+  font-weight: 600;
+  color: #eee;
+  margin-bottom: 0.5rem;
+  position: relative; /* Keep relative */
+  /* Add top padding to make space for the number */
+  padding-top: 2rem; 
+}
+
+.description-text {
+  flex-grow: 1; /* Allows description to push title up */
+}
+
+.description-text p {
+  font-size: 0.95rem; 
+  color: #bbb;
+  line-height: 1.6; 
+  /* Add text clamping styles */
+  display: -webkit-box; /* Required for line clamping */
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* Remove fixed height if any, let line-clamp handle it */
+  /* height: calc(1.6 * 0.95rem * 2); */ /* Optional: calculate approximate height */
+  margin: 0; /* Remove default paragraph margin */
+}
+
+/* Hover Effect Styles */
+.hover-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/imsolutions.png'); 
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  /* Transition happens on hover */
+  transition: opacity 0.4s ease-in-out;
+  z-index: 1; /* Initially behind text wrapper */
+  background-color: #1a1a1a; /* Add a dark bg behind image */
+}
+
+.service-card-item:hover .hover-background {
+  opacity: 1; /* Show image fully */
+  z-index: 3; /* Bring image overlay above text */
+}
+
+.hover-arrow {
+  position: absolute;
+  bottom: 1rem; /* Restore position */
+  right: 1rem;
+  width: 24px; /* Restore size */
+  height: 24px;
+  opacity: 0;
+  transform: scale(0.8) translateX(10px);
+  transition: opacity 0.3s ease-out 0.1s, transform 0.3s ease-out 0.1s; /* Slight delay */
+  z-index: 4; /* Arrow is always on top */
+  filter: invert(1) brightness(1.5); 
+  pointer-events: none; /* Arrow shouldn't block hover */
+}
+
+.service-card-item:hover .hover-arrow {
+  opacity: 1;
+  transform: scale(1) translateX(0);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .service-redirect-container {
+    flex-direction: column;
+  }
+  .service-redirect-sidebar {
+    flex-basis: auto;
+    max-width: none;
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #2a2a2a;
+    padding: 1.5rem;
+    justify-content: flex-start;
+  }
+  .quote {
+    display: none; /* Hide quote on small screens */
+  }
+  .service-redirect-content {
+    padding: 2rem 1.5rem;
+  }
+  .service-title-header h1 { font-size: 2.5rem; }
+  .service-cards-scroll {
+     gap: 1.5rem;
+     margin: 0 -1rem; /* Adjust negative margin */
+     padding-left: 1rem;
+     padding-right: 1rem;
+  }
+  .service-card-item {
+     width: 250px; /* Adjust width for smaller screens */
+     min-height: 260px;
+  }
+  .service-card-title { font-size: 1.4rem; padding-top: 1.6rem; }
+  .description-text p { font-size: 0.9rem; }
+}
+
+@media (max-width: 768px) {
+  .service-cards-scroll {
+    /* Restore mobile values */
+    gap: 1.5rem;
+    margin: 0 -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .service-card-item {
+     width: 240px; 
+     max-height: 220px; /* Adjust max-height */
+  }
+   .card-content-wrapper {
+      padding: 1rem;
+      gap: 0.5rem;
+    }
+  .service-card-title { font-size: 1.4rem; padding-top: 1.6rem; }
+  .item-number-display {
+      top: 1rem; /* Adjust positioning */
+      left: 1rem;
+      font-size: 0.8rem;
+  }
+  .description-text p {
+    font-size: 0.9rem; 
+    line-height: 1.5; 
+    /* Ensure clamping is maintained */
+    -webkit-line-clamp: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .service-title-header h1 { font-size: 2rem; }
+  .service-card-title { font-size: 1.4rem; }
+  .description-text p { font-size: 0.95rem; }
+  .image-hover-box { display: none; } /* Hide image box on very small screens */
+} 
