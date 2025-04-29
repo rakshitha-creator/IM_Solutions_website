@@ -1,0 +1,21 @@
+/* styles/FullPageScroll.css */
+
+.sliderWrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider {
+  display: flex;
+  width: 300vw; /* Since we now have 3 slides */
+  height: 100vh;
+  transition: transform 0.8s ease-in-out;
+}
+
+.slide {
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
+}

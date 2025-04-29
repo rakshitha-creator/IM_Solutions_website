@@ -1,0 +1,91 @@
+.showreel-page {
+  min-height: 100vh;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.close-button {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 2.5rem;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.close-button:hover {
+  transform: scale(1.2);
+  color: #ff0a1f;
+}
+
+.video-container::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .showreel-page {
+    padding: 1rem;
+  }
+
+  .close-button {
+    top: -35px;
+    font-size: 2rem;
+    width: 35px;
+    height: 35px;
+  }
+
+  .video-container {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .showreel-page {
+    padding: 0.5rem;
+  }
+
+  .close-button {
+    top: -30px;
+    font-size: 1.8rem;
+    width: 30px;
+    height: 30px;
+  }
+
+  .video-container {
+    max-width: 95%;
+  }
+} 

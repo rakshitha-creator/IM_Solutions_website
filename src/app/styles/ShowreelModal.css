@@ -1,0 +1,43 @@
+.showreelButton {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.showreelButton:hover {
+  background-color: white;
+  color: black;
+  transform: scale(1.05);
+}
+
+.arrow {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.showreelButton:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .showreelButton {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .showreelButton {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
