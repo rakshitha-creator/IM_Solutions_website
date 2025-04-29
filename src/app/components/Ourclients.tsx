@@ -1,8 +1,9 @@
-// src/app/Ourclients.tsx
-"use client";
-import React from "react";
-import Link from "next/link";
-import "../styles/Ourclients.css";
+'use client';
+
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image'; // ✅ Import next/image
+import '../styles/Ourclients.css';
 
 const Ourclients = () => {
   return (
@@ -10,7 +11,13 @@ const Ourclients = () => {
       <div className="ourClientsContent">
         {/* LEFT IMAGE */}
         <div className="ourClientsImage">
-          <img src="/creative_sec.webp" alt="Creative Section" />
+          <Image 
+            src="/creative_sec.webp" 
+            alt="Creative Section" 
+            width={500} 
+            height={500} 
+            priority
+          />
         </div>
 
         {/* RIGHT CONTENT */}
@@ -34,7 +41,12 @@ const Ourclients = () => {
               <div className="cardText">Images vs Video vs GIFs – Which Should I choose?</div>
               <Link href="/blog/images-vs-video">
                 <div className="arrowCircle">
-                  <img src="/arrow.svg" alt="arrow" />
+                  <Image 
+                    src="/arrow.svg" 
+                    alt="arrow" 
+                    width={24} 
+                    height={24}
+                  />
                 </div>
               </Link>
             </div>
@@ -44,7 +56,12 @@ const Ourclients = () => {
               <div className="cardText">Upgrade your brand with these 5 social media tools</div>
               <Link href="/blog/social-media-tools">
                 <div className="arrowCircle">
-                  <img src="/arrow.svg" alt="arrow" />
+                  <Image 
+                    src="/arrow.svg" 
+                    alt="arrow" 
+                    width={24} 
+                    height={24}
+                  />
                 </div>
               </Link>
             </div>
@@ -54,7 +71,12 @@ const Ourclients = () => {
               <div className="cardText">What the future looks like for content marketing?</div>
               <Link href="/blog/content-marketing">
                 <div className="arrowCircle">
-                  <img src="/arrow.svg" alt="arrow" />
+                  <Image 
+                    src="/arrow.svg" 
+                    alt="arrow" 
+                    width={24} 
+                    height={24}
+                  />
                 </div>
               </Link>
             </div>

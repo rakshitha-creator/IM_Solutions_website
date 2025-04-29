@@ -43,11 +43,12 @@ export default function FullPageSlider() {
 
   // Update hash when index changes
   useEffect(() => {
-    const hash = Object.entries(sectionIndices).find(([_, value]) => value === index)?.[0] || '#home';
+    const hash = Object.entries(sectionIndices).find(([, idx]) => idx === index)?.[0] || '#home';
     if (window.location.hash !== hash) {
       window.history.replaceState(null, '', hash);
     }
   }, [index]);
+  
 
   const handleWheel = useCallback((e: WheelEvent) => {
     e.preventDefault();

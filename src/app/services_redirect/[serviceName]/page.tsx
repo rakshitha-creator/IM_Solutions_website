@@ -1,7 +1,6 @@
 'use client';
 
 import { useRouter, usePathname } from 'next/navigation'; // Use navigation hooks
-import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import '../../styles/ServiceRedirectPage.css'; // Path to new CSS file
 

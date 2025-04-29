@@ -1,20 +1,11 @@
 'use client';
 
 import './globals.css';
-import { ReactNode, createContext, useContext, useState } from 'react';
+import { ReactNode, useState } from 'react';
 import DotOverlay from './components/DotOverlay';
 import PageLayout from './components/PageLayout';
 import Image from 'next/image';
-
-const DotOverlayContext = createContext({
-  isOpen: false,
-  open: () => {},
-  close: () => {},
-});
-
-export function useDotOverlay() {
-  return useContext(DotOverlayContext);
-}
+import { DotOverlayContext } from '@/hooks/useDotOverlay'; // Import context
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);

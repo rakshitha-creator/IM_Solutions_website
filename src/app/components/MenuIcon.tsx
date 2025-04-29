@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useDotOverlay } from '../layout';
+import { useDotOverlay } from '@/hooks/useDotOverlay';
 
 export default function MenuIcon() {
   const { open } = useDotOverlay();

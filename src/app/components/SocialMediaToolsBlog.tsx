@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import '../styles/BlogPost.css';
 
@@ -42,10 +41,10 @@ export default function SocialMediaToolsBlog() {
 
               <h2 className="blog-subtitle">Why do we need Social media tools?</h2>
               <p>
-                Let's say we take up an hour to complete a task on social media, using a tool designed to help
+                Let s say we take up an hour to complete a task on social media, using a tool designed to help
                 you save time and get the work done in probably half the time. In an age when time is
                 considered money, having social media tools to help you get more organized and save time,
-                money, and energy into promoting your brand's awareness is key to creating and sustaining a
+                money, and energy into promoting your brands awareness is key to creating and sustaining a
                 successful brand.
               </p>
             </div>
@@ -112,7 +111,7 @@ export default function SocialMediaToolsBlog() {
           <div className="sidebar-section">
             <h3>Tools Overview</h3>
             <p>
-              The best social media tools will help your brand stay organized and efficient. We've
+              The best social media tools will help your brand stay organized and efficient. We ve
               compiled a list of the most used social media management tools that can transform your
               social media strategy.
             </p>

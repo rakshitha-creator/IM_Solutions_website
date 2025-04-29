@@ -20,10 +20,11 @@ export default function Contact() {
           <div className="contact-container">
             {/* Left Column - Interested */}
             <div className="contact-left">
-              <h1 className="contact-title">
-                Interested?<br />
-                Let's talk!
-              </h1>
+            <h1 className="contact-title">
+  Interested?<br />
+  Let&apos;s talk!
+</h1>
+
               <p className="contact-description">
                 Just fill this simple form in and we will contact you promptly
                 to discuss your project. Hate forms? Drop us a line at{" "}

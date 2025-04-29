@@ -1,17 +1,15 @@
 'use client';
+
 import { useState, useEffect } from 'react';
-import Header from './Header';
 import MenuIcon from './MenuIcon';
 import ScrollIndicator from './ScrollIndicator';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { useDotOverlay } from '../layout';
 import '../styles/Home.css';
 
 export default function Home() {
   const router = useRouter();
-  const { open } = useDotOverlay();
-  const words = ['DARE', 'VENTURE', 'RISK'];
+  const words: string[] = ['DARE', 'VENTURE', 'RISK']; // Fixed the type
   const [index, setIndex] = useState(0);
   const [text, setText] = useState('');
   const [charIndex, setCharIndex] = useState(0);
@@ -39,7 +37,7 @@ export default function Home() {
     }, speed);
 
     return () => clearTimeout(timeout);
-  }, [charIndex, isDeleting, index]);
+  }, [charIndex, isDeleting, index, words]); // Added words to the dependency array
 
   const handleNavigation = (path: string) => {
     setIsSliding(true);
@@ -89,3 +87,7 @@ export default function Home() {
     </>
   );
 }
+
+
+
+

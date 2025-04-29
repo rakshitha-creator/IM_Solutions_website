@@ -1,11 +1,10 @@
 'use client';
 
-import React, { useEffect, useState, KeyboardEvent } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useDotOverlay } from '../layout';
+import { useDotOverlay } from '@/hooks/useDotOverlay';
 import '../styles/DotOverlay.css';
 
 interface DotOverlayProps {
@@ -32,21 +31,21 @@ export default function DotOverlay({ isOpen }: DotOverlayProps) {
   const { close } = useDotOverlay();
 
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') close();
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        close();
+      }
     };
-    window.addEventListener('keydown', onKey as any);
-    return () => window.removeEventListener('keydown', onKey as any);
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
   }, [close]);
 
   const handleNavigation = (path: string) => {
     close();
     if (path.startsWith('/#')) {
-      // For section navigation
       const hash = path.substring(1); // Remove the leading '/'
       window.location.hash = hash;
     } else {
-      // For regular page navigation
       router.push(path);
     }
   };
@@ -69,9 +68,6 @@ export default function DotOverlay({ isOpen }: DotOverlayProps) {
     { id: 5, text: "Get in touch", path: '/#contact' },
   ];
 
-  const serviceSubItems = ['Creative', 'Web', 'Performance', 'Content'];
-
-  // Reset hovered item when overlay closes
   useEffect(() => {
     if (!isOpen) {
       setHoveredItem(null);
@@ -120,7 +116,7 @@ export default function DotOverlay({ isOpen }: DotOverlayProps) {
                   <span className="dotOverlay-menuNumber">{item.id}</span>
                   {item.submenu ? (
                     <div className="dotOverlay-menuTextWrapper">
-                      <div 
+                      <div
                         onClick={() => handleNavigation(item.path)}
                         className="dotOverlay-menuText"
                         style={{ textDecoration: 'none', cursor: 'pointer' }}
@@ -128,7 +124,7 @@ export default function DotOverlay({ isOpen }: DotOverlayProps) {
                         {item.text}
                       </div>
                       {hoveredItem === item.id && (
-                    <div className="dotOverlay-submenu">
+                        <div className="dotOverlay-submenu">
                           {item.submenu.map((subItem) => (
                             <div
                               key={subItem.id}

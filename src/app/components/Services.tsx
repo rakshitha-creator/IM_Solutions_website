@@ -3,6 +3,7 @@
 import '../styles/Services.css';
 import { useRouter } from 'next/navigation';
 import ShowreelModal from '../components/ShowreelModal';
+import Image from 'next/image';
 
 export default function ServicesPage() {
   const router = useRouter();
@@ -35,11 +36,12 @@ export default function ServicesPage() {
             <h2>Creative</h2>
             <p>
               A picture is worth a thousand words. And the pictures our designers can capture
-              can portray the totality of your brand's image.
+              can portray the totality of your brands image.
             </p>
             <div className="hoverImage">
-              <img src="/creative.jpg" alt="Creative Hover" />
-              <img
+              <Image src="/creative.jpg" alt="Creative Hover" width={500} height={300}/>
+              <Image
+              width={500} height={300}
                 src="/arrow.svg"
                 alt="Arrow"
                 className="hoverArrow"
@@ -58,8 +60,8 @@ export default function ServicesPage() {
               and optimised data to target and reach your treasured audience wherever they are.
             </p>
             <div className="hoverImage">
-              <img src="/performance.jpg" alt="Performance Hover" />
-              <img
+              <Image src="/performance.jpg" alt="Performance Hover" width={500} height={300}/>
+              <Image
                 src="/arrow.svg"
                 alt="Arrow"
                 className="hoverArrow"
@@ -67,6 +69,7 @@ export default function ServicesPage() {
                   e.stopPropagation();
                   handleRedirect('performance');
                 }}
+                width={500} height={300}
               />
             </div>
           </div>
@@ -79,8 +82,8 @@ export default function ServicesPage() {
               architecting th...
             </p>
             <div className="hoverImage">
-              <img src="/performance.jpg" alt="Website Hover" />
-              <img
+              <Image src="/performance.jpg" alt="Website Hover" width={500} height={300}/>
+              <Image
                 src="/arrow.svg"
                 alt="Arrow"
                 className="hoverArrow"
@@ -88,6 +91,7 @@ export default function ServicesPage() {
                   e.stopPropagation();
                   handleRedirect('web');
                 }}
+                width={500} height={300}
               />
             </div>
           </div>
@@ -99,8 +103,8 @@ export default function ServicesPage() {
               meaning. Our writers craft words carefully together to give your brand the perfect...
             </p>
             <div className="hoverImage">
-              <img src="/performance.jpg" alt="Content Hover" />
-              <img
+              <Image src="/performance.jpg" alt="Content Hover" width={500} height={300}/>
+              <Image
                 src="/arrow.svg"
                 alt="Arrow"
                 className="hoverArrow"
@@ -108,6 +112,7 @@ export default function ServicesPage() {
                   e.stopPropagation();
                   handleRedirect('content');
                 }}
+                width={500} height={300}
               />
             </div>
           </div>
